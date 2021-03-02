@@ -1,5 +1,7 @@
 extends Actor
 
+onready var animated_sprite = $AnimatedSprite
+
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	var direction: = get_direction()
@@ -8,14 +10,13 @@ func _physics_process(delta: float) -> void:
 	_velocity = move_and_slide_with_snap(
 		_velocity, snap, FLOOR_NORMAL, true
 	)
-
+	update_animation(direction)
 
 func get_direction() -> Vector2:
 	return Vector2(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		-Input.get_action_strength("jump") if is_on_floor() and Input.is_action_just_pressed("jump") else 0.0
 	)
-
 
 func calculate_move_velocity(
 		linear_velocity: Vector2,
@@ -30,3 +31,19 @@ func calculate_move_velocity(
 	if is_jump_interrupted:
 		velocity.y = 0.0
 	return velocity
+
+func update_animation(direction: Vector2):
+	if direction.x != 0:
+		animated_sprite.flip_h = direction.x < 0
+		animated_sprite.position.x = -51 if direction.x < 0 else 51
+	
+	if is_on_floor():
+		animated_sprite.animation = "run" if abs(_velocity.x) > 0.1 else "idle"
+	else:
+		animated_sprite.animation = "falling" if _velocity.y > 0 else "jumping"
+
+
+
+
+
+

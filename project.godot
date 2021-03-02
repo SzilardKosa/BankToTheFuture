@@ -21,6 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="BankToTheFuture"
+run/main_scene="res://src/Levels/TestLevel.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -32,8 +33,8 @@ GlobalData="*res://src/Autoload/GlobalData.gd"
 window/size/width=1920
 window/size/height=1080
 window/size/always_on_top=true
-window/size/test_width=1280
-window/size/test_height=720
+window/size/test_width=800
+window/size/test_height=450
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 

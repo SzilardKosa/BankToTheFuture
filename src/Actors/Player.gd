@@ -2,14 +2,17 @@ extends Actor
 
 onready var animated_sprite = $AnimatedSprite
 
+export var playing = true
+
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	var direction: = get_direction()
-	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
-	var snap: Vector2 = Vector2.DOWN * 60.0 if direction.y == 0.0 else Vector2.ZERO
-	_velocity = move_and_slide_with_snap(
-		_velocity, snap, FLOOR_NORMAL, true
-	)
+	if playing:
+		_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
+		var snap: Vector2 = Vector2.DOWN * 60.0 if direction.y == 0.0 else Vector2.ZERO
+		_velocity = move_and_slide_with_snap(
+			_velocity, snap, FLOOR_NORMAL, true
+		)
 	update_animation(direction)
 
 func get_direction() -> Vector2:

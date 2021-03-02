@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="BankToTheFuture"
-run/main_scene="res://src/Levels/TestLevel.tscn"
+run/main_scene="res://src/Levels/TestLevelPista.tscn"
 config/icon="res://icon.png"
 
 [autoload]

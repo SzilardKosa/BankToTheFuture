@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/Objects/Door.gd" type="Script" id=2]
+[ext_resource path="res://assets/door/door_0.png" type="Texture" id=3]
+[ext_resource path="res://assets/door/door_1.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "open",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "closed",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 96, 128 )
+
+[node name="Door2D" type="Area2D"]
+input_pickable = false
+collision_layer = 2147483648
+collision_mask = 2147483649
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -160 )
+frames = SubResource( 1 )
+animation = "closed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -128 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

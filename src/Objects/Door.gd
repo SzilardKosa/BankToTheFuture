@@ -5,6 +5,7 @@ onready var sprite = $Sprite
 signal door_knocked(door_name)
 
 func _on_body_entered(body):
+	print("git commit test")
 	emit_signal("door_knocked", self.name)
 
 func open():

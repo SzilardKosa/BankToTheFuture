@@ -49,15 +49,15 @@ animations = [ {
 "name": "run",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 32 ) ],
-"loop": true,
-"name": "falling",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 33 ) ],
 "loop": true,
 "name": "jumping",
 "speed": 20.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "falling",
+"speed": 5.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
@@ -85,5 +85,8 @@ position = Vector2( 51, -65.85 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 7
+frame = 3
 playing = true
+
+[node name="TrashPosition" type="Position2D" parent="."]
+position = Vector2( 86, -64 )

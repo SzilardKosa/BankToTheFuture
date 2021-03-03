@@ -1,4 +1,8 @@
 extends RigidBody2D
+class_name Trash
+
+enum TRASH_TYPE {mixed, plastic, paper}
+export(TRASH_TYPE) var type = TRASH_TYPE.mixed
 
 onready var picked_up_position = get_node("../Player/TrashPosition")
 onready var player = get_node("../Player")

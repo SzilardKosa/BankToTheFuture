@@ -13,9 +13,21 @@ _global_script_classes=[ {
 "class": "Actor",
 "language": "GDScript",
 "path": "res://src/Actors/Actor.gd"
+}, {
+"base": "RigidBody2D",
+"class": "Trash",
+"language": "GDScript",
+"path": "res://src/Objects/trash/Trash.gd"
+}, {
+"base": "StaticBody2D",
+"class": "TrashCan",
+"language": "GDScript",
+"path": "res://src/Objects/trashcan/TrashCan.gd"
 } ]
 _global_script_class_icons={
-"Actor": ""
+"Actor": "",
+"Trash": "",
+"TrashCan": ""
 }
 
 [application]

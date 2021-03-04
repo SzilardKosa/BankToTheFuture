@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tiles/Grass.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/ui/touch_button_down.png" type="Texture" id=7]
 [ext_resource path="res://src/Background/ParallaxBackground.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Objects/trashcan/PlasticTrashCan.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/icons/4.png" type="Texture" id=10]
 [ext_resource path="res://src/Objects/trash/MixedTrash1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/Objects/trash/PaperTrash1.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/Levels/TestLevelSzilard.gd" type="Script" id=18]
@@ -139,3 +140,8 @@ position = Vector2( 2720, 1024 )
 position = Vector2( 1360, 1024 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 8 )]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 643.3, 648.25 )
+scale = Vector2( 2.33231, 2.22308 )
+texture = ExtResource( 10 )

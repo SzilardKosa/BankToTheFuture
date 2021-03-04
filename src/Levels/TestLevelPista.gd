@@ -58,7 +58,7 @@ func set_time_left(value):
 		game_over()
 
 func enter_quiz_mode():
-	control.visible = false
+	control.set_deferred("visible", false)
 	get_tree().paused = true
 	quiz.question_data = questions[active_door_index % len(questions)]
 	quiz.show()

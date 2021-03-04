@@ -27,7 +27,7 @@ func _on_picked_up(trash: Trash):
 func _on_dropped():
 	print("Dropped")
 	current_trash = null
-	trash_drop_button.hide()
+	trash_drop_button.set_deferred("visible", false)
 
 func _on_right_trash():
 	print("right trash")

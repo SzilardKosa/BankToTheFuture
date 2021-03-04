@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/10.png-441900742094b1565991833af470e327.stex"
+path="res://.import/Empty1024x1024-05-03.png-0b1b6e1587f9ccd41bc35cf03b670379.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ninepatch/10.png"
-dest_files=[ "res://.import/10.png-441900742094b1565991833af470e327.stex" ]
+source_file="res://assets/ninepatch/Empty1024x1024-05-03.png"
+dest_files=[ "res://.import/Empty1024x1024-05-03.png-0b1b6e1587f9ccd41bc35cf03b670379.stex" ]
 
 [params]
 

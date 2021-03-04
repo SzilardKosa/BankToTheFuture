@@ -1,6 +1,7 @@
 extends Actor
 
 onready var animated_sprite = $AnimatedSprite
+onready var trash_position = $TrashPosition
 
 export var playing = true
 
@@ -39,7 +40,8 @@ func update_animation(direction: Vector2):
 	if direction.x != 0:
 		animated_sprite.flip_h = direction.x < 0
 		animated_sprite.position.x = -51 if direction.x < 0 else 51
-	
+		trash_position.position.x = -88 if direction.x < 0 else 88
+		
 	if is_on_floor():
 		animated_sprite.animation = "run" if abs(_velocity.x) > 0.1 else "idle"
 	else:

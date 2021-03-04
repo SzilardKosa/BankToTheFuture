@@ -118,7 +118,7 @@ gravity = 6000.0
 position = Vector2( 776, 984 )
 
 [node name="PaperTrash1" parent="." instance=ExtResource( 15 )]
-position = Vector2( 1552, 1000 )
+position = Vector2( 1568, 1008 )
 
 [node name="PaperTrashCan" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2048, 1024 )

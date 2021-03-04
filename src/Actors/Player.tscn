@@ -85,8 +85,8 @@ position = Vector2( 51, -65.85 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 9
+frame = 1
 playing = true
 
 [node name="TrashPosition" type="Position2D" parent="."]
-position = Vector2( 86, -64 )
+position = Vector2( 88, -64 )

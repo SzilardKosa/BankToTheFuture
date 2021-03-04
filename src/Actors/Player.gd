@@ -3,8 +3,6 @@ extends Actor
 onready var animated_sprite = $AnimatedSprite
 onready var trash_position = $TrashPosition
 
-export var playing = true
-
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	var direction: = get_direction()

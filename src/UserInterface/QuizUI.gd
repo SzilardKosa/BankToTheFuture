@@ -21,6 +21,8 @@ func _ready():
 	
 func _on_button_up(extra_arg_0):
 #	print("button %d is up" % extra_arg_0)
+	if buttons_selected[good_answer_index]:
+		return
 	if buttons_selected[extra_arg_0]:
 		return
 	buttons_selected[extra_arg_0] = true
@@ -33,6 +35,9 @@ func _on_button_up(extra_arg_0):
 		button_path.get_child(extra_arg_0).get_node("Anim").play("BadAnswer")
 		emit_signal("quiz_answered", 0)
 #		print("wrong answer")
+
+func _on_animation_finished(anim_name):
+	emit_signal("quiz_anim_finished")
 
 func set_question_data(value):
 	question_data = value
@@ -65,7 +70,3 @@ func show():
 func hide():
 	self.visible = false
 #	print("quiz hided")
-
-
-func _on_animation_finished(anim_name):
-	emit_signal("quiz_anim_finished")

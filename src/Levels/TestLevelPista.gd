@@ -6,7 +6,6 @@ onready var quiz = $InterfaceLayer/QuizUI
 onready var player = $GameLayer/Player
 onready var doors = $GameLayer/Doors.get_children()
 #onready var game = $GameLayer
-onready var sixteen_ms_timer = $Logic/SixteenMs
 onready var one_sec_timer = $Logic/OneSec
 onready var path = $Logic/Path2D
 
@@ -27,11 +26,10 @@ func _ready():
 	pass
 
 	set_time_left(time_left)
-	sixteen_ms_timer.start()
 	one_sec_timer.start()
 	
 
-func _on_SixteenMs_timeout():
+func _process(delta):
 	calc_set_progress()
 	
 func _on_OneSec_timeout():

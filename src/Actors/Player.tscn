@@ -49,15 +49,15 @@ animations = [ {
 "name": "run",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 33 ) ],
-"loop": true,
-"name": "jumping",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 32 ) ],
 "loop": true,
 "name": "falling",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 33 ) ],
+"loop": true,
+"name": "jumping",
+"speed": 20.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
@@ -68,7 +68,6 @@ script = ExtResource( 2 )
 current = true
 process_mode = 0
 limit_left = 0
-limit_bottom = 1088
 limit_smoothed = true
 smoothing_enabled = true
 drag_margin_left = 0.0
@@ -85,7 +84,6 @@ position = Vector2( 51, -65.85 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="TrashPosition" type="Position2D" parent="."]

@@ -1,10 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/UserInterface/ShoppingList.gd" type="Script" id=1]
+[ext_resource path="res://assets/ui/fonts/AkayaKanadaka-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -2.24493
+margin_bottom = -2.24487
 rect_min_size = Vector2( 1920, 1080 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -12,21 +20,31 @@ __meta__ = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 28
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -250.0
+margin_left = -249.333
+margin_right = 0.66748
 margin_bottom = 400.0
+color = Color( 0.192157, 0.192157, 0.192157, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ShoppingListLabel" type="RichTextLabel" parent="."]
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 30
+
+[node name="ShoppingListLabel" type="RichTextLabel" parent="CanvasLayer2"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -250.0
-margin_bottom = 400.0
+margin_left = -248.665
+margin_top = 1.09216
+margin_right = 1.33472
+margin_bottom = 401.092
+custom_fonts/mono_font = SubResource( 1 )
+text = "Starter Text"
 __meta__ = {
 "_edit_use_anchors_": false
 }

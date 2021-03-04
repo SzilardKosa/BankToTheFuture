@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/hustler/hustlerDino.png" type="Texture" id=1]
+[ext_resource path="res://src/Actors/Hustler.gd" type="Script" id=2]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 20.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.8484, 36.1189 )
+
+[node name="Hustler" type="KinematicBody2D"]
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -3.17175, -39.5863 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 2 )
+animation = "idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.529739, -37.9891 )
+shape = SubResource( 1 )

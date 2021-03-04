@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/UserInterface/ShopUI.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/fonts/AkayaKanadaka-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/dynamic_fonts/menu.tres" type="DynamicFont" id=3]
 
 [sub_resource type="DynamicFont" id=2]
 size = 64
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -14,10 +17,10 @@ font_data = ExtResource( 2 )
 [node name="ShopUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 3.75
-margin_top = 3.69023
-margin_right = 3.75
-margin_bottom = 3.69019
+margin_left = -2.64154
+margin_top = -3.79335
+margin_right = -2.6416
+margin_bottom = -3.79333
 rect_min_size = Vector2( 1920, 1080 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -28,6 +31,7 @@ __meta__ = {
 layer = 50
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.48987
@@ -43,6 +47,7 @@ __meta__ = {
 layer = 51
 
 [node name="ItemList" type="ItemList" parent="CanvasLayer2"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -55,22 +60,26 @@ rect_min_size = Vector2( 250, 50 )
 custom_fonts/font = SubResource( 2 )
 items = [ "Item 0", null, false, "Item 1", null, false, "Item 2", null, false, "Item 3", null, false ]
 select_mode = 1
+auto_height = true
 max_columns = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PriceSum" type="Label" parent="CanvasLayer2"]
+visible = false
 margin_left = 549.326
 margin_top = 224.266
 margin_right = 967.326
 margin_bottom = 336.266
+custom_fonts/font = SubResource( 3 )
 text = "25000"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Wealth" type="Label" parent="CanvasLayer2"]
+visible = false
 margin_left = 1024.47
 margin_top = 190.607
 margin_right = 1285.47
@@ -82,6 +91,7 @@ __meta__ = {
 }
 
 [node name="Exit" type="Button" parent="CanvasLayer2"]
+visible = false
 margin_left = 1302.76
 margin_top = 345.218
 margin_right = 1528.76
@@ -91,6 +101,7 @@ __meta__ = {
 }
 
 [node name="Accept" type="Button" parent="CanvasLayer2"]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = 0.513977
@@ -99,6 +110,30 @@ margin_right = 68.5139
 margin_bottom = 862.491
 rect_scale = Vector2( 5, 5 )
 text = "Accept"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer3"]
+margin_left = 169.96
+margin_top = 70.37
+margin_right = 413.96
+margin_bottom = 159.37
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 0.956863, 0.956863, 1 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer3"]
+margin_left = 170.703
+margin_top = 162.683
+margin_right = 414.703
+margin_bottom = 251.683
+text = "Stop"
 __meta__ = {
 "_edit_use_anchors_": false
 }

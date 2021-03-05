@@ -49,19 +49,20 @@ animations = [ {
 "name": "falling",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 33 ) ],
-"loop": true,
-"name": "jumping",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 27 ), ExtResource( 21 ), ExtResource( 4 ), ExtResource( 26 ), ExtResource( 5 ), ExtResource( 19 ), ExtResource( 22 ), ExtResource( 11 ), ExtResource( 16 ), ExtResource( 6 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "run",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 33 ) ],
+"loop": true,
+"name": "jumping",
 "speed": 20.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 2
+collision/safe_margin = 0.16
 script = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]

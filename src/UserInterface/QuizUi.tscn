@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/ui/horizontal_bar_red.png" type="Texture" id=4]
 [ext_resource path="res://assets/ui/horizontal_bar_green.png" type="Texture" id=5]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=21]
 resource_name = "BadAnswer"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:self_modulate")
@@ -21,7 +21,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.196078, 0.196078, 1 ), Color( 1, 0.588235, 0.588235, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=22]
 resource_name = "BadAnswerOld"
 length = 0.8
 tracks/0/type = "value"
@@ -37,7 +37,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 3 ), ExtResource( 4 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=23]
 resource_name = "Default"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:texture")
@@ -64,7 +64,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=24]
 resource_name = "GoodAnswer"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:self_modulate")
@@ -79,7 +79,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.196078, 1, 1, 1 ), Color( 0.588235, 1, 1, 1 ), Color( 0, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=25]
 resource_name = "GoodAnswerOld"
 length = 0.8
 tracks/0/type = "value"
@@ -444,7 +444,6 @@ __meta__ = {
 }
 
 [node name="Texture" type="NinePatchRect" parent="ForPadding/Padding/VBoxContainer/Answers/Answer0"]
-self_modulate = Color( 0.517075, 1, 1, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 3 )
@@ -459,7 +458,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="ForPadding/Padding/VBoxContainer/Answers/Answer0"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "Button0"
+text = "Button1"
 align = 1
 valign = 1
 autowrap = true
@@ -469,11 +468,11 @@ __meta__ = {
 
 [node name="Anim" type="AnimationPlayer" parent="ForPadding/Padding/VBoxContainer/Answers/Answer0"]
 autoplay = "Default"
-anims/BadAnswer = SubResource( 4 )
-anims/BadAnswerOld = SubResource( 1 )
-anims/Default = SubResource( 2 )
-anims/GoodAnswer = SubResource( 5 )
-anims/GoodAnswerOld = SubResource( 3 )
+anims/BadAnswer = SubResource( 21 )
+anims/BadAnswerOld = SubResource( 22 )
+anims/Default = SubResource( 23 )
+anims/GoodAnswer = SubResource( 24 )
+anims/GoodAnswerOld = SubResource( 25 )
 
 [node name="Answer1" type="TextureButton" parent="ForPadding/Padding/VBoxContainer/Answers"]
 margin_left = 922.0

@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tiles/TileSet.tres" type="TileSet" id=2]
 [ext_resource path="res://src/UserInterface/TouchControl.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Objects/trash/PaperTrash1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Objects/Door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/UserInterface/QuizUi.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Levels/TestLevelPista.gd" type="Script" id=7]
@@ -37,7 +38,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 3, 9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 64, 640 ), Vector2( 1152, 640 ) ]
+"values": [ Vector2( 64, 512 ), Vector2( 1152, 512 ) ]
 }
 
 [sub_resource type="Curve2D" id=3]
@@ -53,8 +54,10 @@ time_left = 180
 pause_mode = 2
 
 [node name="LevelUI" parent="InterfaceLayer" instance=ExtResource( 8 )]
+visible = false
 
 [node name="Control" parent="InterfaceLayer" instance=ExtResource( 3 )]
+visible = false
 
 [node name="QuizUI" parent="InterfaceLayer" instance=ExtResource( 6 )]
 visible = false
@@ -105,7 +108,7 @@ playback_process_mode = 0
 anims/default = SubResource( 1 )
 
 [node name="MovingPlatform2" type="KinematicBody2D" parent="GameLayer/MovingPlatforms"]
-position = Vector2( 64, 640 )
+position = Vector2( 608, 512 )
 collision_layer = 2
 
 [node name="TileMap" type="TileMap" parent="GameLayer/MovingPlatforms/MovingPlatform2"]
@@ -150,6 +153,9 @@ scale = Vector2( 0.63, 0.63 )
 [node name="Door6" parent="GameLayer/Doors" instance=ExtResource( 5 )]
 position = Vector2( 2720, 192 )
 scale = Vector2( 0.63, 0.63 )
+
+[node name="PaperTrash1" parent="GameLayer" instance=ExtResource( 4 )]
+position = Vector2( 640, 448 )
 
 [node name="Logic" type="Node" parent="."]
 

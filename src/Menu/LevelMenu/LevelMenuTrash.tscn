@@ -1,0 +1,172 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/icons/Iconic2048x2048_cropped_1.png" type="Texture" id=1]
+[ext_resource path="res://src/UserInterface/CustomButtonLevel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInterface/CustomIconButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Menu/TitleLable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Menu/fade_in/FadeIn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/icons/Iconic2048x2048_cropped_87.png" type="Texture" id=6]
+[ext_resource path="res://assets/background/NewBackground1920x1080.png" type="Texture" id=7]
+[ext_resource path="res://src/Menu/LevelMenu/LevelMenuTrash.gd" type="Script" id=8]
+
+[node name="LevelMenuThrash" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -2.11893
+margin_bottom = -2.1189
+texture = ExtResource( 7 )
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 1904.0
+margin_bottom = 980.0
+
+[node name="Title" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 1904.0
+margin_bottom = 300.0
+
+[node name="CustomButton" parent="MarginContainer/VBoxContainer/Title" instance=ExtResource( 3 )]
+margin_right = 300.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 6 )
+expand = true
+scene_to_load = "res://src/Menu/MainMenu.tscn"
+
+[node name="TitleLable" parent="MarginContainer/VBoxContainer/Title" instance=ExtResource( 4 )]
+margin_left = 304.0
+margin_right = 1600.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Szemétszedő Akció"
+align = 1
+valign = 1
+
+[node name="Padding" type="Control" parent="MarginContainer/VBoxContainer/Title"]
+margin_left = 1604.0
+margin_right = 1904.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 0 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 304.0
+margin_right = 1904.0
+margin_bottom = 980.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Left" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 300.0
+margin_bottom = 676.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_vertical = 3
+
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 304.0
+margin_right = 1600.0
+margin_bottom = 676.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Level1" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons" instance=ExtResource( 2 )]
+margin_right = 256.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 256, 256 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+expand = true
+texture = ExtResource( 1 )
+label = "1"
+
+[node name="Left2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
+margin_left = 260.0
+margin_right = 342.0
+margin_bottom = 676.0
+rect_min_size = Vector2( 15, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Level2" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons" instance=ExtResource( 2 )]
+margin_left = 346.0
+margin_right = 602.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 256, 256 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+expand = true
+texture = ExtResource( 1 )
+label = "2"
+
+[node name="Left3" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
+margin_left = 606.0
+margin_right = 689.0
+margin_bottom = 676.0
+rect_min_size = Vector2( 15, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Level3" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons" instance=ExtResource( 2 )]
+margin_left = 693.0
+margin_right = 949.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 256, 256 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+expand = true
+texture = ExtResource( 1 )
+label = "3"
+
+[node name="Left4" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
+margin_left = 953.0
+margin_right = 1035.0
+margin_bottom = 676.0
+rect_min_size = Vector2( 15, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Level4" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons" instance=ExtResource( 2 )]
+margin_left = 1039.0
+margin_right = 1295.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 256, 256 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+expand = true
+texture = ExtResource( 1 )
+label = "4"
+
+[node name="Right" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 1604.0
+margin_right = 1904.0
+margin_bottom = 676.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_vertical = 3
+
+[node name="FadeIn" parent="." instance=ExtResource( 5 )]
+visible = false
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

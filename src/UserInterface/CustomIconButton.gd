@@ -1,6 +1,6 @@
 extends TextureButton
 
-export var scene_to_load: PackedScene
+export var scene_to_load: String
 
 func _on_button_down():
 	get_node("Anim").play("Pressed")

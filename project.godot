@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Actors/Actor.gd"
 }, {
+"base": "TextureButton",
+"class": "CustomButton",
+"language": "GDScript",
+"path": "res://src/UserInterface/CustomButtonLevel.gd"
+}, {
+"base": "Control",
+"class": "LevelMenu",
+"language": "GDScript",
+"path": "res://src/Menu/LevelMenu/LevelMenu.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Shop",
 "language": "GDScript",
@@ -36,6 +46,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Actor": "",
+"CustomButton": "",
+"LevelMenu": "",
 "Shop": "",
 "ShopItem": "",
 "Trash": "",

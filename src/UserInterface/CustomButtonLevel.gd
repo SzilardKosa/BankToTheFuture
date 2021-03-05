@@ -1,9 +1,9 @@
 tool
 extends TextureButton
-
+class_name CustomButton
 export var texture: Texture setget _set_texture
 export var label: String setget _set_label
-export var scene_to_load: String
+export var scene_to_load: PackedScene
 
 func _ready():
 	_set_texture(texture)
@@ -19,7 +19,7 @@ func _set_label(value):
 	label = value
 	if !is_inside_tree():
 		return
-	get_node("Label").text = label
+	get_node("Texture/Label").text = label
 
 
 

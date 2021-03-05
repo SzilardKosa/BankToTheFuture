@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/background/NewBackground1920x1080.png" type="Texture" id=1]
 [ext_resource path="res://src/Menu/fade_in/FadeIn.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://assets/icons/Iconic2048x2048_cropped_123.png" type="Texture" id=5]
 [ext_resource path="res://src/Menu/TitleLable.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/UserInterface/CustomButton.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/Levels/TestLevelSzilard.tscn" type="PackedScene" id=8]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -101,19 +100,21 @@ __meta__ = {
 margin_right = 906.0
 margin_bottom = 192.0
 label = "A nagy bevásárlás"
+scene_to_load = "res://src/Menu/LevelMenu/LevelMenu.tscn"
 
 [node name="QuizButton" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons" instance=ExtResource( 7 )]
 margin_top = 242.0
 margin_right = 906.0
 margin_bottom = 434.0
 label = "Harcos kvíz"
+scene_to_load = "res://src/Menu/LevelMenu/LevelMenuQuiz.tscn"
 
 [node name="TrashButton" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons" instance=ExtResource( 7 )]
 margin_top = 484.0
 margin_right = 906.0
 margin_bottom = 676.0
 label = "Szemétszedő akció"
-scene_to_load = ExtResource( 8 )
+scene_to_load = "res://src/Menu/LevelMenu/LevelMenuTrash.tscn"
 
 [node name="right" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer"]
 margin_left = 1367.0

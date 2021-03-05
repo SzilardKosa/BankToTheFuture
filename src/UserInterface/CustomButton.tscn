@@ -1,13 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/UserInterface/CustomButton.gd" type="Script" id=1]
 [ext_resource path="res://assets/ninepatch/Empty1024x1024-03-01.png" type="Texture" id=2]
-[ext_resource path="res://assets/ui/fonts/Montserrat-ExtraBold.otf" type="DynamicFontData" id=3]
-
-[sub_resource type="DynamicFont" id=1]
-size = 64
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 3 )
+[ext_resource path="res://assets/dynamic_fonts/CustomButton.tres" type="DynamicFont" id=3]
 
 [sub_resource type="Animation" id=2]
 length = 0.1
@@ -85,7 +80,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "Gomb"
 align = 1
 valign = 1

@@ -4,6 +4,7 @@ signal changed
 
 export var price = 150
 export var texture:Texture
+export var item_name = "Egg"
 
 var count = 0
 
@@ -36,3 +37,11 @@ func update_label():
 func get_value():
 	return count * price
 
+func get_count():
+	return count
+func get_name():
+	return item_name
+func reset():
+	count = 0
+	update_label()
+	pass

@@ -1,12 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/UserInterface/ShoppingList.gd" type="Script" id=1]
-[ext_resource path="res://assets/ui/fonts/AkayaKanadaka-Regular.ttf" type="DynamicFontData" id=2]
-
-[sub_resource type="DynamicFont" id=1]
-size = 120
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+[ext_resource path="res://assets/dynamic_fonts/menu.tres" type="DynamicFont" id=2]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -25,7 +20,7 @@ layer = 28
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -249.333
+margin_left = -283.0
 margin_right = 0.66748
 margin_bottom = 400.0
 color = Color( 0.192157, 0.192157, 0.192157, 1 )
@@ -39,12 +34,21 @@ layer = 30
 [node name="ShoppingListLabel" type="RichTextLabel" parent="CanvasLayer2"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -248.665
-margin_top = 1.09216
-margin_right = 1.33472
-margin_bottom = 401.092
-custom_fonts/mono_font = SubResource( 1 )
+margin_left = -273.0
+margin_top = 2.0
+margin_bottom = 411.0
+custom_fonts/normal_font = ExtResource( 2 )
 text = "Starter Text"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WealthLabel" type="RichTextLabel" parent="CanvasLayer2"]
+margin_right = 440.0
+margin_bottom = 128.0
+custom_fonts/normal_font = ExtResource( 2 )
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+text = "Wealth:"
 __meta__ = {
 "_edit_use_anchors_": false
 }

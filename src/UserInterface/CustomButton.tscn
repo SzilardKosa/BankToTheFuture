@@ -59,8 +59,8 @@ tracks/0/keys = {
 }
 
 [node name="CustomButton" type="TextureButton"]
-margin_right = 240.0
-margin_bottom = 128.0
+margin_right = 1312.0
+margin_bottom = 776.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 1 )

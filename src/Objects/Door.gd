@@ -21,7 +21,7 @@ func _on_InteractionArea_body_exited(body):
 
 func _on_KnockButton_released():
 	knock_button.visible = false
-	emit_signal("door_knocked")	
+	emit_signal("door_knocked", self.name)	
 	
 	
 

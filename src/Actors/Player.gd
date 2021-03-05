@@ -3,6 +3,21 @@ extends Actor
 onready var animated_sprite = $AnimatedSprite
 onready var trash_position = $TrashPosition
 
+export var frames_boy: SpriteFrames
+export var frames_girl: SpriteFrames
+
+var anim_offset = 0
+
+func _ready():
+	GlobalData.selected_player = GlobalData.PLAYER_GIRL_ID
+	if GlobalData.selected_player == GlobalData.PLAYER_BOY_ID:
+		animated_sprite.frames = frames_boy
+		anim_offset = 51
+	if GlobalData.selected_player == GlobalData.PLAYER_GIRL_ID:
+		animated_sprite.frames = frames_girl
+		anim_offset = -8
+	animated_sprite.position.x = anim_offset
+
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	var direction: = get_direction()
@@ -36,7 +51,8 @@ func calculate_move_velocity(
 func update_animation(direction: Vector2):
 	if direction.x != 0:
 		animated_sprite.flip_h = direction.x < 0
-		animated_sprite.position.x = -51 if direction.x < 0 else 51
+		
+		animated_sprite.position.x = -anim_offset if direction.x < 0 else anim_offset
 		trash_position.position.x = -88 if direction.x < 0 else 88
 		
 	if is_on_floor():

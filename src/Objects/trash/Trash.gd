@@ -8,6 +8,7 @@ export(String) var trash_name = "szemét"
 onready var picked_up_position = get_node("../Player/TrashPosition")
 onready var collision_shape = get_node("CollisionShape2D")
 onready var interaction_area = get_node("InteractionArea")
+onready var pickup_timer = get_node("PickUpTimer")
 
 signal picked_up(trash)
 signal dropped
@@ -36,7 +37,9 @@ func _input(event):
 func drop_trash():
 	picked_up = false
 	collision_shape.disabled = false
-	interaction_area.visible = true
+	pickup_timer.start()
 	emit_signal("dropped")
-	
 
+
+func _on_PickUpTimer_timeout():
+	interaction_area.visible = true

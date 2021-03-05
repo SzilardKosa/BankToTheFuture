@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="BankToTheFuture"
-run/main_scene="res://src/Menu/MainMenu.tscn"
+run/main_scene="res://src/Menu/ScoreMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]

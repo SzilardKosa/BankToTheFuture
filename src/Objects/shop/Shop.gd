@@ -43,3 +43,11 @@ func reset():
 	$ShopUI.reset()
 	pass
 
+
+
+func _on_ShopDoor_door_knocked2(name):
+	emit_signal("ShopUI",true)
+	$ShopUI.invis(true)
+	self.get_parent().get_tree().paused = true
+	reset()
+	pass # Replace with function body.

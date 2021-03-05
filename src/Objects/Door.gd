@@ -1,11 +1,12 @@
 extends StaticBody2D
+class_name Door
 
 onready var sprite = $Sprite
 onready var interaction_area = $InteractionArea
 onready var collision_shape = $CollisionShape2D
 onready var knock_button = $InteractionArea/KnockButton
 
-signal door_knocked()
+signal door_knocked(name)
 
 func _ready():
 	knock_button.visible = false

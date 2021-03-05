@@ -52,6 +52,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 texture_normal = ExtResource( 5 )
 expand = true
+scene_to_load = "res://src/Menu/Settings.tscn"
 
 [node name="TitleLable" parent="MarginContainer/VBoxContainer/Title" instance=ExtResource( 6 )]
 margin_left = 304.0

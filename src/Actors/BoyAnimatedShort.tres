@@ -1,0 +1,45 @@
+[gd_resource type="SpriteFrames" load_steps=31 format=2]
+
+[ext_resource path="res://assets/boy/Idle (4).png" type="Texture" id=2]
+[ext_resource path="res://assets/boy/Idle (11).png" type="Texture" id=9]
+[ext_resource path="res://assets/boy/Idle (12).png" type="Texture" id=11]
+[ext_resource path="res://assets/boy/Idle (13).png" type="Texture" id=15]
+[ext_resource path="res://assets/boy/Idle (14).png" type="Texture" id=16]
+[ext_resource path="res://assets/boy/Idle (3).png" type="Texture" id=17]
+[ext_resource path="res://assets/boy/Idle (8).png" type="Texture" id=18]
+[ext_resource path="res://assets/boy/Idle (1).png" type="Texture" id=19]
+[ext_resource path="res://assets/boy/Idle (2).png" type="Texture" id=21]
+[ext_resource path="res://assets/boy/Idle (7).png" type="Texture" id=23]
+[ext_resource path="res://assets/boy/Idle (5).png" type="Texture" id=25]
+[ext_resource path="res://assets/boy/Idle (6).png" type="Texture" id=27]
+[ext_resource path="res://assets/boy/Idle (9).png" type="Texture" id=28]
+[ext_resource path="res://assets/boy/Idle (10).png" type="Texture" id=29]
+[ext_resource path="res://assets/boy/Idle (15).png" type="Texture" id=31]
+[ext_resource path="res://assets/boy/Walk (3).png" type="Texture" id=33]
+[ext_resource path="res://assets/boy/Walk (5).png" type="Texture" id=34]
+[ext_resource path="res://assets/boy/Walk (6).png" type="Texture" id=35]
+[ext_resource path="res://assets/boy/Walk (8).png" type="Texture" id=36]
+[ext_resource path="res://assets/boy/Walk (4).png" type="Texture" id=37]
+[ext_resource path="res://assets/boy/Walk (10).png" type="Texture" id=38]
+[ext_resource path="res://assets/boy/Walk (2).png" type="Texture" id=45]
+[ext_resource path="res://assets/boy/Walk (7).png" type="Texture" id=48]
+[ext_resource path="res://assets/boy/Walk (9).png" type="Texture" id=49]
+[ext_resource path="res://assets/boy/Walk (1).png" type="Texture" id=54]
+[ext_resource path="res://assets/boy/Walk (14).png" type="Texture" id=55]
+[ext_resource path="res://assets/boy/Walk (12).png" type="Texture" id=57]
+[ext_resource path="res://assets/boy/Walk (11).png" type="Texture" id=58]
+[ext_resource path="res://assets/boy/Walk (13).png" type="Texture" id=61]
+[ext_resource path="res://assets/boy/Walk (15).png" type="Texture" id=62]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 2 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 23 ), ExtResource( 18 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "idle",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 54 ), ExtResource( 45 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 48 ), ExtResource( 36 ), ExtResource( 49 ), ExtResource( 38 ), ExtResource( 58 ), ExtResource( 57 ), ExtResource( 61 ), ExtResource( 55 ), ExtResource( 62 ) ],
+"loop": true,
+"name": "walk",
+"speed": 15.0
+} ]

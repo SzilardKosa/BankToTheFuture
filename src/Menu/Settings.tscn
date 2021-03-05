@@ -1,16 +1,15 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/background/NewBackground1920x1080.png" type="Texture" id=1]
 [ext_resource path="res://src/Menu/fade_in/FadeIn.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/icons/Iconic2048x2048_cropped_87.png" type="Texture" id=3]
 [ext_resource path="res://src/UserInterface/CustomIconButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/icons/Iconic2048x2048_cropped_1.png" type="Texture" id=5]
+[ext_resource path="res://src/Actors/GirlAnimatedShort.tres" type="SpriteFrames" id=5]
 [ext_resource path="res://src/Menu/TitleLable.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Menu/Settings.gd" type="Script" id=7]
 [ext_resource path="res://assets/ninepatch/Empty1024x1024-03-05.png" type="Texture" id=8]
 [ext_resource path="res://assets/ninepatch/Empty1024x1024-03-07.png" type="Texture" id=9]
-[ext_resource path="res://src/Actors/BoyAnimated.tres" type="SpriteFrames" id=10]
-[ext_resource path="res://src/Actors/GirlAnimated.tres" type="SpriteFrames" id=11]
+[ext_resource path="res://src/Actors/BoyAnimatedShort.tres" type="SpriteFrames" id=10]
 
 [node name="Settings" type="Control"]
 anchor_right = 1.0
@@ -21,9 +20,6 @@ __meta__ = {
 }
 texture_selected = ExtResource( 9 )
 texture_deselected = ExtResource( 8 )
-
-[node name="FadeIn" parent="." instance=ExtResource( 2 )]
-visible = false
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -61,6 +57,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 texture_normal = ExtResource( 3 )
 expand = true
+scene_to_load = "res://src/Menu/MainMenu.tscn"
 
 [node name="TitleLable" parent="MarginContainer/VBoxContainer/Title" instance=ExtResource( 6 )]
 margin_left = 304.0
@@ -109,14 +106,14 @@ margin_bottom = 676.0
 rect_min_size = Vector2( 400, 400 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 8 )
 expand = true
 stretch_mode = 4
 
 [node name="SpriteBoy" type="AnimatedSprite" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons/ButtonBoy"]
 position = Vector2( 491.083, 316.177 )
 frames = ExtResource( 10 )
-animation = "walk"
+animation = "run"
 
 [node name="ButtonGirl" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons"]
 margin_left = 704.0
@@ -125,13 +122,13 @@ margin_bottom = 676.0
 rect_min_size = Vector2( 400, 400 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 8 )
 expand = true
 stretch_mode = 4
 
 [node name="SpriteGirl" type="AnimatedSprite" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons/ButtonGirl"]
 position = Vector2( 100.182, 70.1815 )
-frames = ExtResource( 11 )
+frames = ExtResource( 5 )
 animation = "idle"
 centered = false
 
@@ -140,6 +137,9 @@ margin_left = 1593.0
 margin_right = 1820.0
 margin_bottom = 676.0
 size_flags_horizontal = 3
-[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
+
+[node name="FadeIn" parent="." instance=ExtResource( 2 )]
+visible = false
 [connection signal="button_down" from="MarginContainer/VBoxContainer/MarginContainer/Buttons/ButtonBoy" to="." method="_on_ButtonBoy_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/MarginContainer/Buttons/ButtonGirl" to="." method="_on_ButtonGirl_button_down"]
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

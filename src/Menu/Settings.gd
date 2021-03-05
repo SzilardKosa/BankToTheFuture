@@ -5,6 +5,8 @@ onready var button_boy = get_node("MarginContainer/VBoxContainer/MarginContainer
 onready var button_girl = get_node("MarginContainer/VBoxContainer/MarginContainer/Buttons/ButtonGirl")
 onready var sprite_boy = get_node("MarginContainer/VBoxContainer/MarginContainer/Buttons/ButtonBoy/SpriteBoy")
 onready var sprite_girl = get_node("MarginContainer/VBoxContainer/MarginContainer/Buttons/ButtonGirl/SpriteGirl")
+onready var back = get_node("MarginContainer/VBoxContainer/Title/CustomButton")
+var scene_path_to_load
 
 export var texture_selected: Texture
 export var texture_deselected: Texture
@@ -24,6 +26,17 @@ func _ready():
 		
 	sprite_boy.play()
 	sprite_girl.play()
+	back.connect("pressed", self, "_on_Button_pressed", [back.scene_to_load])
+
+func _on_Button_pressed(scene_to_load):
+	$FadeIn.show()
+	$FadeIn.fade_in()
+	scene_path_to_load = scene_to_load
+
+
+func _on_FadeIn_fade_finished():
+	$FadeIn.hide()
+	get_tree().change_scene(scene_path_to_load)
 
 
 func _on_ButtonBoy_button_down():

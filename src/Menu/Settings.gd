@@ -14,6 +14,8 @@ export var texture_deselected: Texture
 func _ready():
 	button_boy.texture_normal = texture_deselected
 	button_girl.texture_normal = texture_deselected
+	sprite_boy.set_sprite_frames(GlobalData.frames_boy)
+	sprite_girl.set_sprite_frames(GlobalData.frames_girl)
 	sprite_boy.animation = "idle"
 	sprite_girl.animation = "idle"
 	

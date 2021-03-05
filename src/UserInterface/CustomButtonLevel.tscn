@@ -3,7 +3,7 @@
 [ext_resource path="res://src/UserInterface/CustomButtonLevel.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/fonts/Montserrat-ExtraBold.otf" type="DynamicFontData" id=3]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=1]
 size = 128
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
@@ -46,7 +46,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 128, 128 )
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 align = 1
 valign = 1
 __meta__ = {

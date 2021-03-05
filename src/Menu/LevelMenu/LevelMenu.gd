@@ -20,4 +20,7 @@ func _on_Button_pressed(scene_to_load):
 
 func _on_FadeIn_fade_finished():
 	$FadeIn.hide()
-	get_tree().change_scene(scene_path_to_load)
+	if scene_path_to_load is String:
+		get_tree().change_scene(scene_path_to_load)
+	else:
+		get_tree().change_scene_to(scene_path_to_load)

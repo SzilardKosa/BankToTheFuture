@@ -5,8 +5,8 @@
 [ext_resource path="res://src/Objects/trash/Trash.gd" type="Script" id=3]
 [ext_resource path="res://src/Objects/trash/InteractionArea.gd" type="Script" id=4]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 32.0
+[sub_resource type="CircleShape2D" id=3]
+radius = 33.9411
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 128, 32 )
@@ -26,7 +26,7 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -32 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="InteractionArea" type="Area2D" parent="."]
 collision_layer = 8
@@ -41,6 +41,11 @@ action = "pick_up"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2( 0, -32 )
 shape = SubResource( 2 )
+
+[node name="PickUpTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
 [connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_InteractionArea_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_InteractionArea_body_exited"]
 [connection signal="pressed" from="InteractionArea/PickUpButton" to="." method="_on_PickUpButton_pressed"]
+[connection signal="timeout" from="PickUpTimer" to="." method="_on_PickUpTimer_timeout"]

@@ -24,8 +24,6 @@ __meta__ = {
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="InterfaceLayer" instance=ExtResource( 3 )]
-margin_left = -8.0
-margin_right = -8.0
 
 [node name="TrashInterfaceLayer" type="CanvasLayer" parent="."]
 

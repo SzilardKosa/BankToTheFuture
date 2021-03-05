@@ -1,0 +1,198 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/background/NewBackground1920x1080.png" type="Texture" id=1]
+[ext_resource path="res://src/Menu/fade_in/FadeIn.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Menu/ScoreMenu.gd" type="Script" id=3]
+[ext_resource path="res://src/UserInterface/IconButtons/Restart.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/UserInterface/IconButtons/Menu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Menu/TitleLable.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/UserInterface/IconButtons/Next.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Menu/ContentLable.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/ninepatch/Empty1024x1024-03-01.png" type="Texture" id=9]
+[ext_resource path="res://assets/icons/Iconic2048x2048_cropped_75.png" type="Texture" id=10]
+[ext_resource path="res://assets/icons/Iconic2048x2048_cropped_47.png" type="Texture" id=11]
+[ext_resource path="res://assets/icons/Iconic2048x2048_cropped_31.png" type="Texture" id=12]
+
+[node name="ScoreMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 1820.0
+margin_bottom = 980.0
+custom_constants/separation = 50
+
+[node name="Title" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 1820.0
+margin_bottom = 157.0
+size_flags_horizontal = 3
+
+[node name="left" type="Control" parent="MarginContainer/VBoxContainer/Title"]
+margin_right = 604.0
+margin_bottom = 157.0
+size_flags_horizontal = 3
+
+[node name="TitleLable" parent="MarginContainer/VBoxContainer/Title" instance=ExtResource( 6 )]
+margin_left = 608.0
+margin_right = 1212.0
+margin_bottom = 157.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+valign = 1
+
+[node name="right" type="Control" parent="MarginContainer/VBoxContainer/Title"]
+margin_left = 1216.0
+margin_right = 1820.0
+margin_bottom = 157.0
+size_flags_horizontal = 3
+
+[node name="Title2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 207.0
+margin_right = 1820.0
+margin_bottom = 630.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/Title2"]
+margin_right = 1820.0
+margin_bottom = 423.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+texture = ExtResource( 9 )
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContentLable" parent="MarginContainer/VBoxContainer/Title2/NinePatchRect" instance=ExtResource( 8 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 0.0
+margin_bottom = 0.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Érdekesség: Tudtad-e, hogy az elefántok álva alszanak?Érdekesség: Tudtad-e, hogy az elefántok álva alszanak?"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="MarginContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 680.0
+margin_right = 1820.0
+margin_bottom = 980.0
+size_flags_horizontal = 3
+
+[node name="left" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer"]
+margin_right = 306.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+margin_left = 310.0
+margin_right = 1510.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+custom_constants/separation = 50
+
+[node name="left" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons"]
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RestartButton" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons" instance=ExtResource( 4 )]
+margin_left = 50.0
+margin_right = 350.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 12 )
+expand = true
+
+[node name="center" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons"]
+margin_left = 400.0
+margin_right = 400.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MenuButton" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons" instance=ExtResource( 5 )]
+margin_left = 450.0
+margin_right = 750.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 11 )
+expand = true
+
+[node name="center2" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons"]
+margin_left = 800.0
+margin_right = 800.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NextButton" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons" instance=ExtResource( 7 )]
+margin_left = 850.0
+margin_right = 1150.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 10 )
+expand = true
+
+[node name="right" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons"]
+margin_left = 1200.0
+margin_right = 1200.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="right" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer"]
+margin_left = 1514.0
+margin_right = 1820.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="FadeIn" parent="." instance=ExtResource( 2 )]
+visible = false
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

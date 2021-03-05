@@ -5,7 +5,7 @@ onready var interaction_area = $InteractionArea
 onready var collision_shape = $CollisionShape2D
 onready var knock_button = $InteractionArea/KnockButton
 
-signal door_knocked(door_name)
+signal door_knocked()
 
 func _ready():
 	knock_button.visible = false
@@ -21,7 +21,7 @@ func _on_InteractionArea_body_exited(body):
 
 func _on_KnockButton_released():
 	knock_button.visible = false
-	emit_signal("door_knocked", self.name)	
+	emit_signal("door_knocked")	
 	
 	
 

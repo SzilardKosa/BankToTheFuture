@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/shop/shelf.png" type="Texture" id=8]
 
 [node name="ShopUI" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 0.749146
@@ -29,100 +30,126 @@ layer = 50
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.48987
-margin_top = 2.24492
-margin_right = 4.48987
-margin_bottom = 2.24487
-color = Color( 0.262745, 0.262745, 0.262745, 0.831373 )
+color = Color( 0.160784, 0.160784, 0.160784, 0.592157 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-margin_left = 1235.73
-margin_top = 853.78
-margin_right = 1910.73
-margin_bottom = 1066.78
+[node name="ShopLayer" type="CanvasLayer" parent="."]
+layer = 55
+
+[node name="Buy" type="Button" parent="ShopLayer"]
+visible = false
+margin_left = 1236.48
+margin_top = 851.278
+margin_right = 1911.48
+margin_bottom = 1064.28
 custom_fonts/font = ExtResource( 5 )
-text = "Accept"
+text = "Vásárlás"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_left = 1069.0
-margin_top = 21.0
-margin_right = 1520.0
-margin_bottom = 261.0
+[node name="Exit" type="Button" parent="ShopLayer"]
+visible = false
+margin_left = 1234.23
+margin_top = 7.84054
+margin_right = 1909.23
+margin_bottom = 220.841
+custom_fonts/font = ExtResource( 5 )
+text = "Kilépés"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ShopLayer"]
+visible = false
+margin_left = 1238.75
+margin_top = 615.498
+margin_right = 1918.75
+margin_bottom = 845.498
 custom_fonts/font = ExtResource( 5 )
 text = "A"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ShopItemUI3" parent="." instance=ExtResource( 3 )]
-margin_left = 211.788
-margin_top = 785.76
-margin_right = 211.788
-margin_bottom = 825.76
+[node name="ShopItemUI3" parent="ShopLayer" instance=ExtResource( 3 )]
+visible = false
+margin_left = 300.089
+margin_top = 904.484
+margin_right = 300.089
+margin_bottom = 944.484
 rect_scale = Vector2( 2, 2 )
 price = 1000
 texture = ExtResource( 4 )
+item_name = "Milk"
 
-[node name="ShopItemUI" parent="." instance=ExtResource( 3 )]
-margin_left = 219.94
-margin_top = 226.99
-margin_right = 219.94
-margin_bottom = 266.99
+[node name="ShopItemUI" parent="ShopLayer" instance=ExtResource( 3 )]
+visible = false
+margin_left = 299.261
+margin_top = 269.387
+margin_right = 299.261
+margin_bottom = 309.387
 rect_scale = Vector2( 2, 2 )
 price = 100
 
-[node name="ShopItemUI2" parent="." instance=ExtResource( 3 )]
-margin_left = 622.114
-margin_top = 224.66
-margin_right = 622.114
-margin_bottom = 264.66
+[node name="ShopItemUI2" parent="ShopLayer" instance=ExtResource( 3 )]
+visible = false
+margin_left = 795.723
+margin_top = 271.547
+margin_right = 795.723
+margin_bottom = 311.547
 rect_scale = Vector2( 2, 2 )
 price = 250
 texture = ExtResource( 2 )
+item_name = "Bread"
 
-[node name="ShopItemUI4" parent="." instance=ExtResource( 3 )]
-margin_left = 622.601
-margin_top = 790.186
-margin_right = 622.601
-margin_bottom = 830.186
+[node name="ShopItemUI4" parent="ShopLayer" instance=ExtResource( 3 )]
+visible = false
+margin_left = 805.189
+margin_top = 904.42
+margin_right = 805.189
+margin_bottom = 944.42
 rect_scale = Vector2( 2, 2 )
 price = 500
 texture = ExtResource( 6 )
+item_name = "Flour"
 
-[node name="ShopItemUI5" parent="." instance=ExtResource( 3 )]
-margin_left = 224.007
-margin_top = 500.085
-margin_right = 224.007
-margin_bottom = 540.085
+[node name="ShopItemUI5" parent="ShopLayer" instance=ExtResource( 3 )]
+visible = false
+margin_left = 294.349
+margin_top = 580.645
+margin_right = 294.349
+margin_bottom = 620.646
 rect_scale = Vector2( 2, 2 )
 price = 500
 texture = ExtResource( 7 )
+item_name = "Apple"
 
-[node name="ShopItemUI6" parent="." instance=ExtResource( 3 )]
-margin_left = 616.6
-margin_top = 502.432
-margin_right = 616.6
-margin_bottom = 542.432
+[node name="ShopItemUI6" parent="ShopLayer" instance=ExtResource( 3 )]
+visible = false
+margin_left = 801.433
+margin_top = 576.258
+margin_right = 801.433
+margin_bottom = 616.258
 rect_scale = Vector2( 2, 2 )
 price = 750
 texture = ExtResource( 7 )
+item_name = "Apple"
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 531.656, 478.74 )
-scale = Vector2( 5, 4 )
+[node name="Sprite" type="Sprite" parent="ShopLayer"]
+visible = false
+position = Vector2( 640.405, 546.238 )
+scale = Vector2( 6, 4.5 )
 z_index = -2
 texture = ExtResource( 8 )
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
-[connection signal="changed" from="ShopItemUI3" to="." method="_on_ShopItemUI_changed"]
-[connection signal="changed" from="ShopItemUI" to="." method="_on_ShopItemUI_changed"]
-[connection signal="changed" from="ShopItemUI" to="ShopItemUI" method="_on_ShopItemUI_changed"]
-[connection signal="changed" from="ShopItemUI2" to="." method="_on_ShopItemUI_changed"]
-[connection signal="changed" from="ShopItemUI4" to="." method="_on_ShopItemUI_changed"]
-[connection signal="changed" from="ShopItemUI5" to="." method="_on_ShopItemUI_changed"]
-[connection signal="changed" from="ShopItemUI6" to="." method="_on_ShopItemUI_changed"]
+[connection signal="visibility_changed" from="." to="." method="_on_ShopUI_visibility_changed"]
+[connection signal="pressed" from="ShopLayer/Buy" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="ShopLayer/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="changed" from="ShopLayer/ShopItemUI3" to="." method="_on_ShopItemUI_changed"]
+[connection signal="changed" from="ShopLayer/ShopItemUI" to="." method="_on_ShopItemUI_changed"]
+[connection signal="changed" from="ShopLayer/ShopItemUI2" to="." method="_on_ShopItemUI_changed"]
+[connection signal="changed" from="ShopLayer/ShopItemUI4" to="." method="_on_ShopItemUI_changed"]
+[connection signal="changed" from="ShopLayer/ShopItemUI5" to="." method="_on_ShopItemUI_changed"]
+[connection signal="changed" from="ShopLayer/ShopItemUI6" to="." method="_on_ShopItemUI_changed"]

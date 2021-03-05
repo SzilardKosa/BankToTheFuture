@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/Objects/ShopDoor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Objects/shop/Shop.gd" type="Script" id=2]
+[ext_resource path="res://src/UserInterface/ShopUI.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 350, 250 )
+
+[node name="Shop" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="PlaceHolder" type="ColorRect" parent="."]
+anchor_left = -175.0
+anchor_top = 125.0
+anchor_bottom = 125.0
+margin_left = -350.0
+margin_top = -250.0
+margin_right = 350.0
+margin_bottom = 250.0
+color = Color( 1, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Image" type="Sprite" parent="."]
+visible = false
+
+[node name="ShopDoor" parent="." instance=ExtResource( 1 )]
+position = Vector2( -255, 250 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="ShopUI" parent="." instance=ExtResource( 3 )]
+visible = false
+margin_left = -10.5646
+margin_right = 1909.44
+margin_bottom = 1077.5
+[connection signal="door_knocked" from="ShopDoor" to="ShopDoor" method="_on_Door2D_door_knocked"]
+[connection signal="door_knocked" from="ShopDoor" to="." method="_on_ShopDoor_door_knocked"]
+[connection signal="bought" from="ShopUI" to="." method="_on_ShopUI_bought"]
+[connection signal="exit" from="ShopUI" to="." method="_on_ShopUI_exit"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tiles/TileSet.tres" type="TileSet" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://src/UserInterface/QuizUi.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Levels/TestLevelPista.gd" type="Script" id=7]
 [ext_resource path="res://src/UserInterface/QuizLevelUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/UserInterface/CustomButton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/icons/Iconic2048x2048_cropped_18.png" type="Texture" id=10]
 
 [sub_resource type="Animation" id=1]
 length = 6.0
@@ -52,6 +54,15 @@ time_left = 180
 
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
 pause_mode = 2
+
+[node name="CustomButton" parent="InterfaceLayer" instance=ExtResource( 9 )]
+margin_left = 320.0
+margin_top = 64.0
+margin_right = 444.0
+margin_bottom = 184.0
+rect_scale = Vector2( 5, 5 )
+texture = ExtResource( 10 )
+label = ""
 
 [node name="LevelUI" parent="InterfaceLayer" instance=ExtResource( 8 )]
 visible = false

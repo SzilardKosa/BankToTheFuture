@@ -86,14 +86,23 @@ margin_bottom = 676.0
 rect_min_size = Vector2( 300, 0 )
 size_flags_vertical = 3
 
-[node name="Buttons" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 304.0
 margin_right = 1600.0
 margin_bottom = 676.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Level1" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons" instance=ExtResource( 2 )]
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 1296.0
+margin_bottom = 336.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Level1" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Buttons" instance=ExtResource( 2 )]
 margin_right = 256.0
 margin_bottom = 256.0
 rect_min_size = Vector2( 256, 256 )
@@ -102,17 +111,17 @@ size_flags_vertical = 0
 expand = true
 texture = ExtResource( 1 )
 label = "1"
-scene_to_load = "res://src/Levels/TestLevelSzilard.tscn"
+scene_to_load = "res://src/Levels/trash/TrashLevel1.tscn"
 
-[node name="Left2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
+[node name="Left2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Buttons"]
 margin_left = 260.0
 margin_right = 342.0
-margin_bottom = 676.0
+margin_bottom = 336.0
 rect_min_size = Vector2( 15, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Level2" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons" instance=ExtResource( 2 )]
+[node name="Level2" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Buttons" instance=ExtResource( 2 )]
 margin_left = 346.0
 margin_right = 602.0
 margin_bottom = 256.0
@@ -122,16 +131,17 @@ size_flags_vertical = 0
 expand = true
 texture = ExtResource( 1 )
 label = "2"
+scene_to_load = "res://src/Levels/trash/TrashLevel2.tscn"
 
-[node name="Left3" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
+[node name="Left3" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Buttons"]
 margin_left = 606.0
 margin_right = 689.0
-margin_bottom = 676.0
+margin_bottom = 336.0
 rect_min_size = Vector2( 15, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Level3" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons" instance=ExtResource( 2 )]
+[node name="Level3" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Buttons" instance=ExtResource( 2 )]
 margin_left = 693.0
 margin_right = 949.0
 margin_bottom = 256.0
@@ -141,16 +151,17 @@ size_flags_vertical = 0
 expand = true
 texture = ExtResource( 1 )
 label = "3"
+scene_to_load = "res://src/Levels/trash/TrashLevel3.tscn"
 
-[node name="Left4" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
+[node name="Left4" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Buttons"]
 margin_left = 953.0
 margin_right = 1035.0
-margin_bottom = 676.0
+margin_bottom = 336.0
 rect_min_size = Vector2( 15, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Level4" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons" instance=ExtResource( 2 )]
+[node name="Level4" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Buttons" instance=ExtResource( 2 )]
 margin_left = 1039.0
 margin_right = 1295.0
 margin_bottom = 256.0
@@ -160,6 +171,85 @@ size_flags_vertical = 0
 expand = true
 texture = ExtResource( 1 )
 label = "4"
+scene_to_load = "res://src/Levels/trash/TrashLevel4.tscn"
+
+[node name="Buttons2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 340.0
+margin_right = 1296.0
+margin_bottom = 676.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Level5" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Buttons2" instance=ExtResource( 2 )]
+margin_right = 256.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 256, 256 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+expand = true
+texture = ExtResource( 1 )
+label = "5"
+scene_to_load = "res://src/Levels/trash/TrashLevel5.tscn"
+
+[node name="Left2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Buttons2"]
+margin_left = 260.0
+margin_right = 342.0
+margin_bottom = 336.0
+rect_min_size = Vector2( 15, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Level6" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Buttons2" instance=ExtResource( 2 )]
+margin_left = 346.0
+margin_right = 602.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 256, 256 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+expand = true
+texture = ExtResource( 1 )
+label = "6"
+scene_to_load = "res://src/Levels/trash/TrashLevel6.tscn"
+
+[node name="Left3" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Buttons2"]
+margin_left = 606.0
+margin_right = 689.0
+margin_bottom = 336.0
+rect_min_size = Vector2( 15, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Level7" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Buttons2" instance=ExtResource( 2 )]
+margin_left = 693.0
+margin_right = 949.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 256, 256 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+expand = true
+texture = ExtResource( 1 )
+label = "7"
+scene_to_load = ""
+
+[node name="Left4" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Buttons2"]
+margin_left = 953.0
+margin_right = 1035.0
+margin_bottom = 336.0
+rect_min_size = Vector2( 15, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Level8" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Buttons2" instance=ExtResource( 2 )]
+margin_left = 1039.0
+margin_right = 1295.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 256, 256 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+expand = true
+texture = ExtResource( 1 )
+label = "8"
+scene_to_load = ""
 
 [node name="Right" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 1604.0

@@ -19,12 +19,11 @@ var active_door_index = -1
 
 
 func _ready():
+	print("Alma")
 	randomize() # debug
-	yield(get_tree().root, "ready")
+	#yield(get_tree().root, "ready")
 	for door in doors:
 		door.connect("door_knocked", self, "_door_knocked")
-	pass
-
 	set_time_left(time_left)
 	one_sec_timer.start()
 	

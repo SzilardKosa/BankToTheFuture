@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var trash_drop_button = get_node("TrashInterfaceLayer/Control/Drop/DropButton")
+onready var trash_drop_button = get_node("InterfaceLayer/DropControl/Drop/DropButton")
 
 var trash_count = 0
 var current_trash: Trash

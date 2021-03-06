@@ -16,6 +16,7 @@ func _on_RestartButton_pressed():
 	get_tree().reload_current_scene()
 
 func _on_MenuButton_pressed():
+	get_tree().set_deferred("paused", false)
 	get_tree().change_scene("res://src/Menu/MainMenu.tscn")
 
 func switch_to_game():

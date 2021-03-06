@@ -26,19 +26,14 @@ __meta__ = {
 
 [node name="Control" parent="InterfaceLayer" instance=ExtResource( 3 )]
 
-[node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource( 10 )]
-pause_mode = 2
-
-[node name="TrashInterfaceLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="TrashInterfaceLayer"]
+[node name="DropControl" type="Control" parent="InterfaceLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Drop" type="Control" parent="TrashInterfaceLayer/Control"]
+[node name="Drop" type="Control" parent="InterfaceLayer/DropControl"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -52,10 +47,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DropButton" type="TouchScreenButton" parent="TrashInterfaceLayer/Control/Drop"]
+[node name="DropButton" type="TouchScreenButton" parent="InterfaceLayer/DropControl/Drop"]
 scale = Vector2( 3, 3 )
 normal = ExtResource( 7 )
 action = "drop"
+
+[node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource( 10 )]
+pause_mode = 2
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -1, 0 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tiles/TileSet.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/Objects/shop/Shop.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Levels/TestLevelAron.gd" type="Script" id=5]
 [ext_resource path="res://src/UserInterface/ShoppingList.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/UserInterface/PauseMenu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Background/ParallaxBackground.tscn" type="PackedScene" id=8]
 
 [node name="TestLevelAron" type="Node2D"]
@@ -29,6 +30,8 @@ margin_top = 768.233
 margin_right = 1351.47
 margin_bottom = 768.233
 
+[node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource( 7 )]
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -1, 0 )
 scale = Vector2( 0.5, 0.5 )
@@ -48,9 +51,19 @@ gravity = 6000.0
 [node name="ParallaxBackground" parent="." instance=ExtResource( 8 )]
 
 [node name="Shop" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1352.47, 771.478 )
+position = Vector2( 1352.47, 777.828 )
 z_index = -5
 collision_layer = 8
 collision_mask = 0
+
+[node name="Shop2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2400.16, 777.828 )
+z_index = -5
+collision_layer = 8
+collision_mask = 0
+list = [ [ "Egg", 150 ], [ "Milk", 200 ], [ "Flour", 500 ] ]
+[connection signal="Done" from="InterfaceLayer/ShoppingList" to="." method="_on_ShoppingList_Done"]
 [connection signal="Bought" from="Shop" to="." method="_on_Shop_Bought"]
 [connection signal="ShopUI" from="Shop" to="." method="_on_Shop_ShopUI"]
+[connection signal="Bought" from="Shop2" to="." method="_on_Shop_Bought"]
+[connection signal="ShopUI" from="Shop2" to="." method="_on_Shop_ShopUI"]

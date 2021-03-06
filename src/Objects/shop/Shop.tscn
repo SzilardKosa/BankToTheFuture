@@ -34,7 +34,6 @@ position = Vector2( -255, 250 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="ShopUI" parent="." instance=ExtResource( 3 )]
-visible = false
 margin_left = -10.5646
 margin_right = 1909.44
 margin_bottom = 1077.5

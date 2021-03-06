@@ -29,3 +29,7 @@ func _on_Shop_Bought(value, list):
 	for child in shop_list:
 		child.setWealth(starting_cash)
 	pass # Replace with function body.
+
+
+func _on_ShoppingList_Done():
+	pass # Replace with function body.

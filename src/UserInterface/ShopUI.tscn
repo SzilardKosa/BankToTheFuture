@@ -1,16 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/UserInterface/ShopUI.gd" type="Script" id=1]
-[ext_resource path="res://assets/shop/bread.png" type="Texture" id=2]
 [ext_resource path="res://src/UserInterface/ShopItemUI.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/shop/milk.png" type="Texture" id=4]
 [ext_resource path="res://assets/dynamic_fonts/menu.tres" type="DynamicFont" id=5]
-[ext_resource path="res://assets/shop/flour.png" type="Texture" id=6]
-[ext_resource path="res://assets/shop/apple.png" type="Texture" id=7]
 [ext_resource path="res://assets/shop/shelf.png" type="Texture" id=8]
 
 [node name="ShopUI" type="Control"]
 pause_mode = 2
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 0.749146
@@ -74,19 +71,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ShopItemUI3" parent="ShopLayer" instance=ExtResource( 3 )]
-visible = false
-margin_left = 300.089
-margin_top = 904.484
-margin_right = 300.089
-margin_bottom = 944.484
-rect_scale = Vector2( 2, 2 )
-price = 1000
-texture = ExtResource( 4 )
-item_name = "Milk"
-
 [node name="ShopItemUI" parent="ShopLayer" instance=ExtResource( 3 )]
-visible = false
 margin_left = 299.261
 margin_top = 269.387
 margin_right = 299.261
@@ -95,47 +80,47 @@ rect_scale = Vector2( 2, 2 )
 price = 100
 
 [node name="ShopItemUI2" parent="ShopLayer" instance=ExtResource( 3 )]
-visible = false
 margin_left = 795.723
 margin_top = 271.547
 margin_right = 795.723
 margin_bottom = 311.547
 rect_scale = Vector2( 2, 2 )
 price = 250
-texture = ExtResource( 2 )
 item_name = "Bread"
 
+[node name="ShopItemUI3" parent="ShopLayer" instance=ExtResource( 3 )]
+margin_left = 300.089
+margin_top = 904.484
+margin_right = 300.089
+margin_bottom = 944.484
+rect_scale = Vector2( 2, 2 )
+price = 1000
+item_name = "Milk"
+
 [node name="ShopItemUI4" parent="ShopLayer" instance=ExtResource( 3 )]
-visible = false
 margin_left = 805.189
 margin_top = 904.42
 margin_right = 805.189
 margin_bottom = 944.42
 rect_scale = Vector2( 2, 2 )
 price = 500
-texture = ExtResource( 6 )
-item_name = "Flour"
 
 [node name="ShopItemUI5" parent="ShopLayer" instance=ExtResource( 3 )]
-visible = false
 margin_left = 294.349
 margin_top = 580.645
 margin_right = 294.349
 margin_bottom = 620.646
 rect_scale = Vector2( 2, 2 )
 price = 500
-texture = ExtResource( 7 )
-item_name = "Apple"
+item_name = "Milk"
 
 [node name="ShopItemUI6" parent="ShopLayer" instance=ExtResource( 3 )]
-visible = false
 margin_left = 801.433
 margin_top = 576.258
 margin_right = 801.433
 margin_bottom = 616.258
 rect_scale = Vector2( 2, 2 )
 price = 750
-texture = ExtResource( 7 )
 item_name = "Apple"
 
 [node name="Sprite" type="Sprite" parent="ShopLayer"]
@@ -147,9 +132,9 @@ texture = ExtResource( 8 )
 [connection signal="visibility_changed" from="." to="." method="_on_ShopUI_visibility_changed"]
 [connection signal="pressed" from="ShopLayer/Buy" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="ShopLayer/Exit" to="." method="_on_Exit_pressed"]
-[connection signal="changed" from="ShopLayer/ShopItemUI3" to="." method="_on_ShopItemUI_changed"]
 [connection signal="changed" from="ShopLayer/ShopItemUI" to="." method="_on_ShopItemUI_changed"]
 [connection signal="changed" from="ShopLayer/ShopItemUI2" to="." method="_on_ShopItemUI_changed"]
+[connection signal="changed" from="ShopLayer/ShopItemUI3" to="." method="_on_ShopItemUI_changed"]
 [connection signal="changed" from="ShopLayer/ShopItemUI4" to="." method="_on_ShopItemUI_changed"]
 [connection signal="changed" from="ShopLayer/ShopItemUI5" to="." method="_on_ShopItemUI_changed"]
 [connection signal="changed" from="ShopLayer/ShopItemUI6" to="." method="_on_ShopItemUI_changed"]

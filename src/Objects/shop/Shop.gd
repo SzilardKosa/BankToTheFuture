@@ -4,8 +4,12 @@ signal ShopUI(boolean)
 signal Bought(value, list)
 var wealth = 0;
 
+export var list = [["Egg",150],["Milk",200]]
+
+
 func _ready():
 	$ShopUI.invis(false)
+	$ShopUI.setup(list)
 	pass # Replace with function body.
 
 func _on_ShopDoor_door_knocked():

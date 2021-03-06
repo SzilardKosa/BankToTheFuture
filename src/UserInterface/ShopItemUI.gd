@@ -3,21 +3,28 @@ extends Control
 signal changed
 
 export var price = 150
-export var texture:Texture
 export var item_name = "Egg"
 
 var count = 0
+var vis = false
 
 onready var count_label = get_node("Count")
 onready var price_label = get_node("Price")
-onready var sprite_label = get_node("Item")
+onready var sprite_item = get_node("Item")
+const res = preload("res://assets/shop/milk.png")
 
+func setVis(visibly):
+	vis = visibly
+	pass
 func _on_Add_pressed():
 	count += 1
 	update_label()
 	pass # Replace with function body.
 func _ready():
-	sprite_label.texture = texture
+	for item in GlobalData.shop_item_list:
+		if item_name == item[0]:
+			sprite_item.set_texture(item[1])
+	#sprite_label.texture == texture
 	update_label()
 	pass
 
@@ -41,7 +48,17 @@ func get_count():
 	return count
 func get_name():
 	return item_name
+func set_name(name):
+	item_name = name
+func set_price(pr):
+	price = pr
 func reset():
 	count = 0
 	update_label()
 	pass
+
+
+func _on_ShopItemUI_visibility_changed():
+	if !vis:
+		self.visible = vis
+	pass # Replace with function body.

@@ -9,7 +9,8 @@ onready var doors = $GameLayer/Doors.get_children()
 onready var one_sec_timer = $Logic/OneSec
 onready var path = $Logic/Path2D
 
-export var time_left = 0 setget set_time_left
+var player_hearts = 3 setget set_player_hearts
+var time_left = 180 setget set_time_left
 var progress: = 0.0
 
 const questions = [["Ki ad nekem pénzt?", "AKELAAA", "Anyám", "Apám", "A farkasok"],\
@@ -19,11 +20,10 @@ var active_door_index = -1
 
 
 func _ready():
-	print("Alma")
-	randomize() # debug
-	#yield(get_tree().root, "ready")
+#	randomize() # debug
 	for door in doors:
 		door.connect("door_knocked", self, "_door_knocked")
+	set_player_hearts(player_hearts)
 	set_time_left(time_left)
 	one_sec_timer.start()
 	
@@ -45,6 +45,7 @@ func _on_quiz_answered(correct):
 		yield(quiz, "quiz_anim_finished")
 		exit_quiz_mode()
 	else:
+		self.player_hearts -= 1
 		self.time_left -= 15
 		
 func set_time_left(value):
@@ -55,6 +56,14 @@ func set_time_left(value):
 		level_ui.time_left = time_left
 	if time_left == 0:
 		game_over()
+		
+func set_player_hearts(value):
+	player_hearts = value
+	if player_hearts < 0:
+		player_hearts = 0
+	if player_hearts == 0:
+		game_over()
+	
 
 func enter_quiz_mode():
 	control.set_deferred("visible", false)

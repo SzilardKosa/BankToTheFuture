@@ -9,7 +9,6 @@ export var frames_girl: SpriteFrames
 var anim_offset = 0
 
 func _ready():
-	#GlobalData.selected_player = GlobalData.PLAYER_GIRL_ID
 	if GlobalData.selected_player == GlobalData.PLAYER_BOY_ID:
 		animated_sprite.frames = frames_boy
 		anim_offset = 51

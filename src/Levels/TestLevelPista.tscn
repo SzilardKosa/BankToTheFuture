@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tiles/TileSet.tres" type="TileSet" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://src/UserInterface/QuizLevelUI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/UserInterface/CustomButton.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/icons/Iconic2048x2048_cropped_18.png" type="Texture" id=10]
+[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Objects/Heart.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=1]
 length = 6.0
@@ -50,7 +52,6 @@ _data = {
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource( 7 )
-time_left = 180
 
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
 pause_mode = 2
@@ -70,6 +71,7 @@ label = ""
 [node name="Control" parent="InterfaceLayer" instance=ExtResource( 3 )]
 
 [node name="QuizUI" parent="InterfaceLayer" instance=ExtResource( 6 )]
+visible = false
 margin_left = 50.0
 margin_top = 150.0
 margin_right = -50.0
@@ -162,6 +164,43 @@ scale = Vector2( 0.63, 0.63 )
 [node name="Door6" parent="GameLayer/Doors" instance=ExtResource( 5 )]
 position = Vector2( 2720, 192 )
 scale = Vector2( 0.63, 0.63 )
+
+[node name="Coins" type="Node2D" parent="GameLayer"]
+visible = false
+
+[node name="Coin" parent="GameLayer/Coins" instance=ExtResource( 11 )]
+position = Vector2( 640, 576 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Coin2" parent="GameLayer/Coins" instance=ExtResource( 11 )]
+position = Vector2( 736, 576 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Coin3" parent="GameLayer/Coins" instance=ExtResource( 11 )]
+position = Vector2( 832, 576 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Coin4" parent="GameLayer/Coins" instance=ExtResource( 11 )]
+position = Vector2( 934.4, 576 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Hearts" type="Node2D" parent="GameLayer"]
+
+[node name="Heart" parent="GameLayer/Hearts" instance=ExtResource( 12 )]
+position = Vector2( 384, 448 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Heart2" parent="GameLayer/Hearts" instance=ExtResource( 12 )]
+position = Vector2( 793.6, 930 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Heart3" parent="GameLayer/Hearts" instance=ExtResource( 12 )]
+position = Vector2( 1152, 704 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Heart4" parent="GameLayer/Hearts" instance=ExtResource( 12 )]
+position = Vector2( 1280, 704 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="PaperTrash1" parent="GameLayer" instance=ExtResource( 4 )]
 position = Vector2( 640, 448 )

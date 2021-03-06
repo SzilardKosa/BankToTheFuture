@@ -70,6 +70,11 @@ animations = [ {
 "name": "idle",
 "speed": 20.0
 }, {
+"frames": [ ExtResource( 54 ), ExtResource( 45 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 48 ), ExtResource( 36 ), ExtResource( 49 ), ExtResource( 38 ), ExtResource( 58 ), ExtResource( 57 ), ExtResource( 61 ), ExtResource( 55 ), ExtResource( 62 ) ],
+"loop": true,
+"name": "walk",
+"speed": 15.0
+}, {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 4 ), ExtResource( 24 ), ExtResource( 10 ), ExtResource( 20 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 12 ), ExtResource( 26 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "run",
@@ -80,18 +85,13 @@ animations = [ {
 "name": "falling",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 32 ) ],
-"loop": true,
-"name": "jumping",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 54 ), ExtResource( 45 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 48 ), ExtResource( 36 ), ExtResource( 49 ), ExtResource( 38 ), ExtResource( 58 ), ExtResource( 57 ), ExtResource( 61 ), ExtResource( 55 ), ExtResource( 62 ) ],
-"loop": true,
-"name": "walk",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 50 ), ExtResource( 41 ), ExtResource( 59 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 56 ), ExtResource( 53 ), ExtResource( 39 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 44 ), ExtResource( 47 ), ExtResource( 43 ), ExtResource( 60 ), ExtResource( 42 ) ],
 "loop": true,
 "name": "dead",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "jumping",
 "speed": 20.0
 } ]

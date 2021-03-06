@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/icons/Iconic2048x2048_cropped_37.png" type="Texture" id=1]
 [ext_resource path="res://assets/icons/Iconic2048x2048_cropped_13.png" type="Texture" id=2]
 [ext_resource path="res://assets/icons/Iconic2048x2048_cropped_25.png" type="Texture" id=3]
+[ext_resource path="res://src/UserInterface/TouchButton.gd" type="Script" id=4]
+[ext_resource path="res://src/UserInterface/TouchControl.gd" type="Script" id=5]
 
 [node name="Control" type="Control"]
 anchor_top = -0.00185185
@@ -13,6 +15,7 @@ margin_top = 50.0
 margin_right = -50.0
 margin_bottom = -50.0
 rect_min_size = Vector2( 1820, 980 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -37,6 +40,7 @@ scale = Vector2( 2, 2 )
 normal = ExtResource( 3 )
 passby_press = true
 action = "move_left"
+script = ExtResource( 4 )
 
 [node name="Control" type="Control" parent="LeftRight"]
 margin_left = 304.0
@@ -56,6 +60,7 @@ scale = Vector2( 2, 2 )
 normal = ExtResource( 2 )
 passby_press = true
 action = "move_right"
+script = ExtResource( 4 )
 
 [node name="Jump" type="Control" parent="."]
 anchor_left = 1.0
@@ -74,3 +79,10 @@ scale = Vector2( 2, 2 )
 normal = ExtResource( 1 )
 passby_press = true
 action = "jump"
+script = ExtResource( 4 )
+[connection signal="pressed" from="LeftRight/Left/Left" to="LeftRight/Left/Left" method="_on_Left_pressed"]
+[connection signal="released" from="LeftRight/Left/Left" to="LeftRight/Left/Left" method="_on_Left_released"]
+[connection signal="pressed" from="LeftRight/Right/Right" to="LeftRight/Right/Right" method="_on_Right_pressed"]
+[connection signal="released" from="LeftRight/Right/Right" to="LeftRight/Right/Right" method="_on_Right_released"]
+[connection signal="pressed" from="Jump/Jump" to="Jump/Jump" method="_on_Jump_pressed"]
+[connection signal="released" from="Jump/Jump" to="Jump/Jump" method="_on_Jump_released"]

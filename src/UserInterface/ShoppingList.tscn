@@ -1,54 +1,43 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/UserInterface/ShoppingList.gd" type="Script" id=1]
-[ext_resource path="res://assets/dynamic_fonts/menu.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/UserInterface/CustomPatchShoppingLabel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInterface/CustomPatchLabel.tscn" type="PackedScene" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -2.24493
-margin_bottom = -2.24487
 rect_min_size = Vector2( 1920, 1080 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 28
+[node name="WealthLabel" parent="." instance=ExtResource( 2 )]
+margin_left = 758.5
+margin_top = 50.0
+margin_right = 1158.5
+margin_bottom = 178.0
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ShoppingListLabel" parent="." instance=ExtResource( 3 )]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -283.0
-margin_right = 0.66748
-margin_bottom = 400.0
-color = Color( 0.192157, 0.192157, 0.192157, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = -450.0
+margin_top = 50.0
+margin_right = -49.9999
+margin_bottom = 300.0
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-layer = 30
+[node name="HBoxContainer" parent="ShoppingListLabel/VBoxContainer" index="0"]
+margin_right = 360.0
 
-[node name="ShoppingListLabel" type="RichTextLabel" parent="CanvasLayer2"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -273.0
-margin_top = 2.0
-margin_bottom = 411.0
-custom_fonts/normal_font = ExtResource( 2 )
-text = "Starter Text"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="NameLabel" parent="ShoppingListLabel/VBoxContainer/HBoxContainer" index="0"]
+margin_right = 178.0
 
-[node name="WealthLabel" type="RichTextLabel" parent="CanvasLayer2"]
-margin_right = 440.0
-margin_bottom = 128.0
-custom_fonts/normal_font = ExtResource( 2 )
-custom_colors/default_color = Color( 1, 0, 0, 1 )
-text = "Wealth:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="CountLabel" parent="ShoppingListLabel/VBoxContainer/HBoxContainer" index="1"]
+margin_left = 182.0
+margin_right = 360.0
+[connection signal="item_rect_changed" from="ShoppingListLabel/VBoxContainer/HBoxContainer" to="." method="_on_HBoxContainer_item_rect_changed"]
+
+[editable path="WealthLabel"]
+
+[editable path="ShoppingListLabel"]

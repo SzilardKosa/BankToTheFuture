@@ -12,11 +12,11 @@ func _ready():
 	knock_button.visible = false
 	close()
 
-func _on_InteractionArea_body_entered(body):
+func _on_InteractionArea_body_entered(_body):
 	knock_button.visible = true
 
 
-func _on_InteractionArea_body_exited(body):
+func _on_InteractionArea_body_exited(_body):
 	knock_button.visible = false
 
 

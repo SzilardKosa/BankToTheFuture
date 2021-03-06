@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/ninepatch/Empty1024x1024-03-03.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/Montserrat-Black.otf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+outline_size = 5
+outline_color = Color( 1, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="CustomPatchLabel" type="Control"]
+margin_right = 403.0
+margin_bottom = 259.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+patch_margin_left = 65
+patch_margin_top = 62
+patch_margin_right = 65
+patch_margin_bottom = 62
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.41422
+margin_bottom = 1.41422
+custom_fonts/font = SubResource( 1 )
+text = "Wealth"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -6,7 +6,7 @@ export var price = 150
 export var item_name = "Egg"
 
 var count = 0
-var vis = false
+export var vis = false
 
 onready var count_label = get_node("Count")
 onready var price_label = get_node("Price")
@@ -57,7 +57,12 @@ func reset():
 	update_label()
 	pass
 
-
+func update():
+	for item in GlobalData.shop_item_list:
+		if item_name == item[0]:
+			sprite_item.set_texture(item[1])
+	#sprite_label.texture == texture
+	update_label()
 func _on_ShopItemUI_visibility_changed():
 	if !vis:
 		self.visible = vis

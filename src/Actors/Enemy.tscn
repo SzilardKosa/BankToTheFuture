@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://src/Actors/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://assets/dino/Idle (9).png" type="Texture" id=2]
@@ -50,14 +50,14 @@ animations = [ {
 "name": "walk",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 20 ), ExtResource( 12 ), ExtResource( 32 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": false,
-"name": "dead",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 9 ), ExtResource( 17 ), ExtResource( 27 ), ExtResource( 18 ), ExtResource( 30 ), ExtResource( 16 ), ExtResource( 35 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 20 ), ExtResource( 12 ), ExtResource( 32 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": false,
+"name": "dead",
 "speed": 10.0
 } ]
 
@@ -70,6 +70,9 @@ extents = Vector2( 77.698, 30 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 58.7444, 145.408 )
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 50.5686, 56.2964 )
+
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 4
 collision_mask = 2
@@ -79,7 +82,7 @@ script = ExtResource( 1 )
 position = Vector2( 130, -185 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 1
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -98,6 +101,19 @@ shape = SubResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
 position = Vector2( 0, -143.843 )
 shape = SubResource( 4 )
+
+[node name="EdgeDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EdgeDetector"]
+position = Vector2( 167.113, -10.4142 )
+shape = SubResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 [connection signal="area_entered" from="StompArea2D" to="." method="_on_StompArea2D_area_entered"]
 [connection signal="body_entered" from="StompArea2D" to="." method="_on_StompArea2D_body_entered"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
+[connection signal="area_exited" from="EdgeDetector" to="." method="_on_EdgeDetector_area_exited"]
+[connection signal="body_exited" from="EdgeDetector" to="." method="_on_EdgeDetector_body_exited"]

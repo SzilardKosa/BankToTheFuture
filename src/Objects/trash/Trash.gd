@@ -11,7 +11,6 @@ onready var interaction_area = get_node("InteractionArea")
 onready var pickup_timer = get_node("PickUpTimer")
 
 signal picked_up(trash)
-signal dropped
 
 var picked_up = false
 
@@ -30,15 +29,10 @@ func pick_up_trash():
 	interaction_area.visible = false
 	emit_signal("picked_up", self)
 
-func _input(event):
-	if Input.is_action_just_pressed("drop") and picked_up:
-		drop_trash()
-
 func drop_trash():
 	picked_up = false
 	collision_shape.disabled = false
 	pickup_timer.start()
-	emit_signal("dropped")
 
 
 func _on_PickUpTimer_timeout():

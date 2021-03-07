@@ -4,6 +4,7 @@
 [ext_resource path="res://assets/trash/mixed_2.png" type="Texture" id=2]
 
 [node name="MixedTrash2" instance=ExtResource( 1 )]
+trash_name = "Lyukas zokni"
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )

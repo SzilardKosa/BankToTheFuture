@@ -21,8 +21,6 @@ frames_girl = ExtResource( 3 )
 position = Vector2( 7.55963, 7.55951 )
 current = true
 process_mode = 0
-limit_left = 0
-limit_bottom = 1090
 limit_smoothed = true
 smoothing_enabled = true
 drag_margin_left = 0.0
@@ -40,7 +38,7 @@ position = Vector2( -8, -65.85 )
 scale = Vector2( 0.3, 0.3 )
 frames = ExtResource( 3 )
 animation = "run"
-frame = 5
+frame = 1
 playing = true
 
 [node name="TrashPosition" type="Position2D" parent="."]

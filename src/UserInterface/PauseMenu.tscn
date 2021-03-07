@@ -28,7 +28,6 @@ __meta__ = {
 }
 
 [node name="PauseButton" type="TouchScreenButton" parent="LeftTop"]
-scale = Vector2( 2, 2 )
 normal = ExtResource( 1 )
 
 [node name="Menu" type="Control" parent="."]

@@ -5,6 +5,7 @@
 
 [node name="PaperTrash3" instance=ExtResource( 1 )]
 type = 2
+trash_name = "Tojástartó"
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )

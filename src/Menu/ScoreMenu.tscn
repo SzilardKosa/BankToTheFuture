@@ -14,6 +14,7 @@
 [ext_resource path="res://assets/icons/Iconic2048x2048_cropped_31.png" type="Texture" id=12]
 
 [node name="ScoreMenu" type="Control"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
@@ -196,4 +197,7 @@ size_flags_vertical = 3
 
 [node name="FadeIn" parent="." instance=ExtResource( 2 )]
 visible = false
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/Buttons/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/Buttons/MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/Buttons/NextButton" to="." method="_on_NextButton_pressed"]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

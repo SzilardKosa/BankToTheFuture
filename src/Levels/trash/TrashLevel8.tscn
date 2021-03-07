@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tiles/TileSet.tres" type="TileSet" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://src/Background/ParallaxBackground.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Objects/trashcan/MixedTrashCan.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/UserInterface/PauseMenu.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Menu/ScoreMenu.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/eastereggs/1-1x.png" type="Texture" id=12]
 [ext_resource path="res://src/Levels/TestLevelSzilard.gd" type="Script" id=18]
 
@@ -40,7 +41,9 @@ warning_enabled = true
 [node name="TrashUI" parent="InterfaceLayer" instance=ExtResource( 7 )]
 
 [node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource( 10 )]
-pause_mode = 2
+
+[node name="ScoreMenu" parent="InterfaceLayer" instance=ExtResource( 11 )]
+menu_screen = "res://src/Menu/LevelMenu/LevelMenuTrash.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 1, 0 )
@@ -65,7 +68,7 @@ limit_right = 17000
 limit_bottom = 1700
 
 [node name="AnimatedSprite" parent="Player" index="2"]
-frame = 2
+frame = 5
 
 [node name="Labels" type="Node" parent="."]
 

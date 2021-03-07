@@ -7,6 +7,7 @@ onready var counter_label = get_node("InterfaceLayer/TrashUI/HBoxContainer/Count
 onready var trash_label = get_node("InterfaceLayer/TrashUI/HBoxContainer/Trashlabel/NinePatchRect/TrashName")
 onready var trash_ninepatch = get_node("InterfaceLayer/TrashUI/HBoxContainer/Trashlabel/NinePatchRect")
 onready var warning = get_node("InterfaceLayer/TrashUI/Warning")
+onready var score_screen = get_node("InterfaceLayer/ScoreMenu")
 
 var warning_texts = ["Nem jó kukába dobtad!", "Másik típusú kukába dobd!", "Ha nem vagy biztos, hogy melyikbe tedd, akkor olvasd el a bal felső sarokban található információt!"]
 var error_num = 0
@@ -62,7 +63,7 @@ func _on_wrong_trash():
 			warning.show_warning(warning_texts[2], 12)
 
 func game_finished():
-	print("Finished")
+	score_screen.show_menu("Gratulálunk!", "Tudtad, hogy az elefántok állva alszanak?")
 
 func update_counter():
 	counter_label.text = "%d/%d" % [total_num, total_num - trash_count]

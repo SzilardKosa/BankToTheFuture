@@ -1,10 +1,15 @@
 extends Node2D
 
+export(bool) var warning_enabled = false
+
 onready var trash_drop_button = get_node("InterfaceLayer/TrashUI/Drop/DropButton")
 onready var counter_label = get_node("InterfaceLayer/TrashUI/HBoxContainer/Counter/NinePatchRect/Label")
 onready var trash_label = get_node("InterfaceLayer/TrashUI/HBoxContainer/Trashlabel/NinePatchRect/TrashName")
 onready var trash_ninepatch = get_node("InterfaceLayer/TrashUI/HBoxContainer/Trashlabel/NinePatchRect")
+onready var warning = get_node("InterfaceLayer/TrashUI/Warning")
 
+var warning_texts = ["Nem jó kukába dobtad!", "Másik típusú kukába dobd!", "Ha nem vagy biztos, hogy melyikbe tedd, akkor olvasd el a bal felső sarokban található információt!"]
+var error_num = 0
 var trash_count = 0
 var total_num = 0
 var current_trash: Trash
@@ -47,7 +52,14 @@ func _on_right_trash():
 		game_finished()
 
 func _on_wrong_trash():
-	print("wrong trash")
+	if warning_enabled:
+		error_num += 1
+		if error_num < 2:
+			warning.show_warning(warning_texts[0], 5)
+		elif error_num < 3:
+			warning.show_warning(warning_texts[1], 5)
+		elif error_num < 5:
+			warning.show_warning(warning_texts[2], 12)
 
 func game_finished():
 	print("Finished")

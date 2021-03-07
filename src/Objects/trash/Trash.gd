@@ -9,10 +9,14 @@ onready var picked_up_position = get_node("../Player/TrashPosition")
 onready var collision_shape = get_node("CollisionShape2D")
 onready var interaction_area = get_node("InteractionArea")
 onready var pickup_timer = get_node("PickUpTimer")
+onready var animation = get_node("AnimationPlayer")
 
 signal picked_up(trash)
 
 var picked_up = false
+
+func _ready():
+	animation.play("pulsing")
 
 func _physics_process(delta):
 	if picked_up:
@@ -28,11 +32,13 @@ func pick_up_trash():
 	collision_shape.disabled = true
 	interaction_area.visible = false
 	emit_signal("picked_up", self)
+	animation.stop()
 
 func drop_trash():
 	picked_up = false
 	collision_shape.disabled = false
 	pickup_timer.start()
+	animation.play("pulsing")
 
 
 func _on_PickUpTimer_timeout():

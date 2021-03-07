@@ -5,6 +5,7 @@
 
 [node name="PlasticTrash1" instance=ExtResource( 1 )]
 type = 1
+trash_name = "PET palack"
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )

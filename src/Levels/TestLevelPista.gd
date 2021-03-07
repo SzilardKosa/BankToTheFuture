@@ -2,20 +2,21 @@ extends Node2D
 
 onready var level_ui = $InterfaceLayer/LevelUI
 onready var control = $InterfaceLayer/Control
+onready var pause_menu = $InterfaceLayer/PauseMenu
 onready var quiz = $InterfaceLayer/QuizUI
 onready var player = $GameLayer/Player
 onready var doors = $GameLayer/Doors.get_children()
-#onready var game = $GameLayer
-onready var one_sec_timer = $Logic/OneSec
+onready var hearts = $GameLayer/Hearts.get_children()
+onready var infos = $GameLayer/Infos.get_children()
 onready var path = $Logic/Path2D
 
 var player_hearts = 3 setget set_player_hearts
-var time_left = 180 setget set_time_left
 var progress: = 0.0
 
 const questions = [["Ki ad nekem pénzt?", "AKELAAA", "Anyám", "Apám", "A farkasok"],\
 					["Mennyivel megy ha háromból visszarakom kettőbe? A skoda jól megy?", "620 ezer\nMilyen skoda?", "Vámosgyörk, illetve per PVC, azaz Pécs", "4.5", "Talán"], \
 					["Egy-két-há", "Kurva anyád", "Négy-öt-hat", "Hét-Nyolc", "Kilenc"]]
+const info_texts = ["Ha hitelt veszel fel, akkor nem veheted el a magyarok munkáit\nItt egy sortörés :D"]
 var active_door_index = -1
 
 
@@ -23,16 +24,15 @@ func _ready():
 #	randomize() # debug
 	for door in doors:
 		door.connect("door_knocked", self, "_door_knocked")
+	for heart in hearts:
+		heart.connect("on_picked_up", self, "_heart_picked")
+	for i in range(len(infos)):
+		infos[i].label.text = info_texts[i % len(info_texts)]
 	set_player_hearts(player_hearts)
-	set_time_left(time_left)
-	one_sec_timer.start()
 	
 
 func _process(delta):
 	calc_set_progress()
-	
-func _on_OneSec_timeout():
-	self.time_left -= 1
 		
 func _door_knocked(door_name):
 	for i in range(len(doors)):
@@ -40,33 +40,32 @@ func _door_knocked(door_name):
 			active_door_index = i 
 	enter_quiz_mode()
 	
+func _heart_picked(body):
+	if player_hearts < 5:
+		self.player_hearts += 1
+	
 func _on_quiz_answered(correct):
 	if correct == 1:
 		yield(quiz, "quiz_anim_finished")
 		exit_quiz_mode()
 	else:
 		self.player_hearts -= 1
-		self.time_left -= 15
 		
-func set_time_left(value):
-	time_left = value
-	if time_left < 0:
-		time_left = 0
-	if(level_ui != null):
-		level_ui.time_left = time_left
-	if time_left == 0:
-		game_over()
+func _on_LevelEnd(body):
+	level_done()
 		
 func set_player_hearts(value):
 	player_hearts = value
 	if player_hearts < 0:
 		player_hearts = 0
+	level_ui.hearts = player_hearts
 	if player_hearts == 0:
 		game_over()
 	
 
 func enter_quiz_mode():
 	control.set_deferred("visible", false)
+	pause_menu.set_deferred("visible", false)
 	get_tree().paused = true
 	quiz.question_data = questions[active_door_index % len(questions)]
 	quiz.show()
@@ -74,6 +73,7 @@ func enter_quiz_mode():
 func exit_quiz_mode():
 	quiz.hide()
 	control.visible = true
+	pause_menu.visible = true
 	get_tree().paused = false
 	doors[active_door_index].open()
 	active_door_index = -1
@@ -90,6 +90,12 @@ func calc_set_progress():
 	
 func game_over():
 	print("game over")
+	
+func level_done():
+	print("level done")
+
+
+
 
 
 

@@ -1,12 +1,11 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/UserInterface/theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/UserInterface/QuizUI.gd" type="Script" id=2]
-[ext_resource path="res://assets/ui/horizontal_bar.png" type="Texture" id=3]
 [ext_resource path="res://assets/ui/horizontal_bar_red.png" type="Texture" id=4]
-[ext_resource path="res://assets/ui/horizontal_bar_green.png" type="Texture" id=5]
+[ext_resource path="res://assets/ninepatch/Empty1024x1024-03-03.png" type="Texture" id=6]
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=1]
 resource_name = "BadAnswer"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:self_modulate")
@@ -21,50 +20,22 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.196078, 0.196078, 1 ), Color( 1, 0.588235, 0.588235, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=22]
-resource_name = "BadAnswerOld"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 25.9921, 1 ),
-"update": 0,
-"values": [ ExtResource( 3 ), ExtResource( 4 ) ]
-}
-
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=2]
 resource_name = "Default"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:texture")
+tracks/0/path = NodePath("Texture:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 3 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Texture:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=3]
 resource_name = "GoodAnswer"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:self_modulate")
@@ -79,23 +50,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.196078, 1, 1, 1 ), Color( 0.588235, 1, 1, 1 ), Color( 0, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=25]
-resource_name = "GoodAnswerOld"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 5 ) ]
-}
-
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 resource_name = "BadAnswer"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:self_modulate")
@@ -110,26 +65,10 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.196078, 0.196078, 1 ), Color( 1, 0.588235, 0.588235, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "BadAnswerOld"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 25.9921, 1 ),
-"update": 0,
-"values": [ ExtResource( 3 ), ExtResource( 4 ) ]
-}
-
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 resource_name = "Default"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:texture")
+tracks/0/path = NodePath("Texture:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -137,16 +76,49 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 3 ) ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("Texture:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
+
+[sub_resource type="Animation" id=6]
+resource_name = "GoodAnswer"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 0.406126, 1.6245, 0.659754 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.196078, 1, 1, 1 ), Color( 0.588235, 1, 1, 1 ), Color( 0, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "BadAnswer"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 0.406126, 1.6245, 0.659754 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.196078, 0.196078, 1 ), Color( 1, 0.588235, 0.588235, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Default"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -169,23 +141,22 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=10]
-resource_name = "GoodAnswerOld"
-length = 0.8
+resource_name = "BadAnswer"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:texture")
+tracks/0/path = NodePath("Texture:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 5 ) ]
+"times": PoolRealArray( 0, 0.2, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 0.406126, 1.6245, 0.659754 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.196078, 0.196078, 1 ), Color( 1, 0.588235, 0.588235, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=11]
-resource_name = "BadAnswer"
+resource_name = "Default"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:self_modulate")
 tracks/0/interp = 1
@@ -193,56 +164,13 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.7 ),
-"transitions": PoolRealArray( 1, 0.406126, 1.6245, 0.659754 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.196078, 0.196078, 1 ), Color( 1, 0.588235, 0.588235, 1 ), Color( 1, 0, 0, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=12]
-resource_name = "BadAnswerOld"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 25.9921, 1 ),
-"update": 0,
-"values": [ ExtResource( 3 ), ExtResource( 4 ) ]
-}
-
-[sub_resource type="Animation" id=13]
-resource_name = "Default"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 3 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Texture:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=14]
 resource_name = "GoodAnswer"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:self_modulate")
@@ -255,111 +183,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 0.406126, 1.6245, 0.659754 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.196078, 1, 1, 1 ), Color( 0.588235, 1, 1, 1 ), Color( 0, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=15]
-resource_name = "GoodAnswerOld"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 5 ) ]
-}
-
-[sub_resource type="Animation" id=16]
-resource_name = "BadAnswer"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.7 ),
-"transitions": PoolRealArray( 1, 0.406126, 1.6245, 0.659754 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.196078, 0.196078, 1 ), Color( 1, 0.588235, 0.588235, 1 ), Color( 1, 0, 0, 1 ) ]
-}
-
-[sub_resource type="Animation" id=17]
-resource_name = "BadAnswerOld"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 25.9921, 1 ),
-"update": 0,
-"values": [ ExtResource( 3 ), ExtResource( 4 ) ]
-}
-
-[sub_resource type="Animation" id=18]
-resource_name = "Default"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 3 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Texture:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=19]
-resource_name = "GoodAnswer"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.7 ),
-"transitions": PoolRealArray( 1, 0.406126, 1.6245, 0.659754 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.196078, 1, 1, 1 ), Color( 0.588235, 1, 1, 1 ), Color( 0, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=20]
-resource_name = "GoodAnswerOld"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 5 ) ]
 }
 
 [node name="QuizUI" type="MarginContainer"]
@@ -418,6 +241,7 @@ __meta__ = {
 [node name="Question" type="Label" parent="ForPadding/Padding/VBoxContainer"]
 margin_right = 1820.0
 margin_bottom = 278.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Question"
 align = 1
@@ -446,11 +270,11 @@ __meta__ = {
 [node name="Texture" type="NinePatchRect" parent="ForPadding/Padding/VBoxContainer/Answers/Answer0"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 3 )
-patch_margin_left = 76
-patch_margin_top = 27
-patch_margin_right = 140
-patch_margin_bottom = 27
+texture = ExtResource( 6 )
+patch_margin_left = 66
+patch_margin_top = 60
+patch_margin_right = 66
+patch_margin_bottom = 62
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -468,11 +292,9 @@ __meta__ = {
 
 [node name="Anim" type="AnimationPlayer" parent="ForPadding/Padding/VBoxContainer/Answers/Answer0"]
 autoplay = "Default"
-anims/BadAnswer = SubResource( 21 )
-anims/BadAnswerOld = SubResource( 22 )
-anims/Default = SubResource( 23 )
-anims/GoodAnswer = SubResource( 24 )
-anims/GoodAnswerOld = SubResource( 25 )
+anims/BadAnswer = SubResource( 1 )
+anims/Default = SubResource( 2 )
+anims/GoodAnswer = SubResource( 3 )
 
 [node name="Answer1" type="TextureButton" parent="ForPadding/Padding/VBoxContainer/Answers"]
 margin_left = 922.0
@@ -487,11 +309,11 @@ __meta__ = {
 [node name="Texture" type="NinePatchRect" parent="ForPadding/Padding/VBoxContainer/Answers/Answer1"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 3 )
-patch_margin_left = 76
-patch_margin_top = 27
-patch_margin_right = 140
-patch_margin_bottom = 27
+texture = ExtResource( 6 )
+patch_margin_left = 66
+patch_margin_top = 60
+patch_margin_right = 66
+patch_margin_bottom = 62
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -509,11 +331,9 @@ __meta__ = {
 
 [node name="Anim" type="AnimationPlayer" parent="ForPadding/Padding/VBoxContainer/Answers/Answer1"]
 autoplay = "Default"
-anims/BadAnswer = SubResource( 6 )
-anims/BadAnswerOld = SubResource( 7 )
-anims/Default = SubResource( 8 )
-anims/GoodAnswer = SubResource( 9 )
-anims/GoodAnswerOld = SubResource( 10 )
+anims/BadAnswer = SubResource( 4 )
+anims/Default = SubResource( 5 )
+anims/GoodAnswer = SubResource( 6 )
 
 [node name="Answer2" type="TextureButton" parent="ForPadding/Padding/VBoxContainer/Answers"]
 margin_top = 361.0
@@ -528,11 +348,11 @@ __meta__ = {
 [node name="Texture" type="NinePatchRect" parent="ForPadding/Padding/VBoxContainer/Answers/Answer2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 3 )
-patch_margin_left = 76
-patch_margin_top = 27
-patch_margin_right = 140
-patch_margin_bottom = 27
+texture = ExtResource( 6 )
+patch_margin_left = 66
+patch_margin_top = 60
+patch_margin_right = 66
+patch_margin_bottom = 62
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -540,7 +360,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="ForPadding/Padding/VBoxContainer/Answers/Answer2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "Button2"
+text = "Button1"
 align = 1
 valign = 1
 autowrap = true
@@ -550,11 +370,9 @@ __meta__ = {
 
 [node name="Anim" type="AnimationPlayer" parent="ForPadding/Padding/VBoxContainer/Answers/Answer2"]
 autoplay = "Default"
-anims/BadAnswer = SubResource( 11 )
-anims/BadAnswerOld = SubResource( 12 )
-anims/Default = SubResource( 13 )
-anims/GoodAnswer = SubResource( 14 )
-anims/GoodAnswerOld = SubResource( 15 )
+anims/BadAnswer = SubResource( 7 )
+anims/Default = SubResource( 8 )
+anims/GoodAnswer = SubResource( 9 )
 
 [node name="Answer3" type="TextureButton" parent="ForPadding/Padding/VBoxContainer/Answers"]
 margin_left = 922.0
@@ -570,11 +388,11 @@ __meta__ = {
 [node name="Texture" type="NinePatchRect" parent="ForPadding/Padding/VBoxContainer/Answers/Answer3"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 3 )
-patch_margin_left = 76
-patch_margin_top = 27
-patch_margin_right = 140
-patch_margin_bottom = 27
+texture = ExtResource( 6 )
+patch_margin_left = 66
+patch_margin_top = 60
+patch_margin_right = 66
+patch_margin_bottom = 62
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -582,7 +400,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="ForPadding/Padding/VBoxContainer/Answers/Answer3"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "Button3"
+text = "Button1"
 align = 1
 valign = 1
 autowrap = true
@@ -592,11 +410,9 @@ __meta__ = {
 
 [node name="Anim" type="AnimationPlayer" parent="ForPadding/Padding/VBoxContainer/Answers/Answer3"]
 autoplay = "Default"
-anims/BadAnswer = SubResource( 16 )
-anims/BadAnswerOld = SubResource( 17 )
-anims/Default = SubResource( 18 )
-anims/GoodAnswer = SubResource( 19 )
-anims/GoodAnswerOld = SubResource( 20 )
+anims/BadAnswer = SubResource( 10 )
+anims/Default = SubResource( 11 )
+anims/GoodAnswer = SubResource( 12 )
 [connection signal="button_up" from="ForPadding/Padding/VBoxContainer/Answers/Answer0" to="." method="_on_button_up" binds= [ 0 ]]
 [connection signal="animation_finished" from="ForPadding/Padding/VBoxContainer/Answers/Answer0/Anim" to="." method="_on_animation_finished"]
 [connection signal="button_up" from="ForPadding/Padding/VBoxContainer/Answers/Answer1" to="." method="_on_button_up" binds= [ 1 ]]

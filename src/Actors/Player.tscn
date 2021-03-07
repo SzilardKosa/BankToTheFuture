@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Actors/BoyAnimated.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=2]
@@ -6,6 +6,9 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 56 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 31.7459, 10 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 2
@@ -35,8 +38,15 @@ position = Vector2( -8, -65.85 )
 scale = Vector2( 0.3, 0.3 )
 frames = ExtResource( 3 )
 animation = "run"
-frame = 6
+frame = 7
 playing = true
 
 [node name="TrashPosition" type="Position2D" parent="."]
 position = Vector2( 88, -64 )
+
+[node name="Stomp" type="Area2D" parent="."]
+collision_layer = 2147483649
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stomp"]
+shape = SubResource( 2 )

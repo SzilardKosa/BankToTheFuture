@@ -1,0 +1,103 @@
+[gd_scene load_steps=42 format=2]
+
+[ext_resource path="res://src/Actors/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://assets/dino/Idle (9).png" type="Texture" id=2]
+[ext_resource path="res://assets/dino/Idle (6).png" type="Texture" id=3]
+[ext_resource path="res://assets/dino/Idle (8).png" type="Texture" id=4]
+[ext_resource path="res://assets/dino/Idle (7).png" type="Texture" id=5]
+[ext_resource path="res://assets/dino/Idle (10).png" type="Texture" id=6]
+[ext_resource path="res://assets/dino/Walk (1).png" type="Texture" id=7]
+[ext_resource path="res://assets/dino/Walk (9).png" type="Texture" id=8]
+[ext_resource path="res://assets/dino/Run (1).png" type="Texture" id=9]
+[ext_resource path="res://assets/dino/Dead (7).png" type="Texture" id=10]
+[ext_resource path="res://assets/dino/Dead (8).png" type="Texture" id=11]
+[ext_resource path="res://assets/dino/Dead (5).png" type="Texture" id=12]
+[ext_resource path="res://assets/dino/Idle (1).png" type="Texture" id=13]
+[ext_resource path="res://assets/dino/Idle (2).png" type="Texture" id=14]
+[ext_resource path="res://assets/dino/Idle (3).png" type="Texture" id=15]
+[ext_resource path="res://assets/dino/Run (6).png" type="Texture" id=16]
+[ext_resource path="res://assets/dino/Run (2).png" type="Texture" id=17]
+[ext_resource path="res://assets/dino/Run (4).png" type="Texture" id=18]
+[ext_resource path="res://assets/dino/Run (8).png" type="Texture" id=19]
+[ext_resource path="res://assets/dino/Dead (4).png" type="Texture" id=20]
+[ext_resource path="res://assets/dino/Idle (4).png" type="Texture" id=21]
+[ext_resource path="res://assets/dino/Idle (5).png" type="Texture" id=22]
+[ext_resource path="res://assets/dino/Dead (1).png" type="Texture" id=23]
+[ext_resource path="res://assets/dino/Walk (6).png" type="Texture" id=24]
+[ext_resource path="res://assets/dino/Walk (4).png" type="Texture" id=25]
+[ext_resource path="res://assets/dino/Walk (8).png" type="Texture" id=26]
+[ext_resource path="res://assets/dino/Run (3).png" type="Texture" id=27]
+[ext_resource path="res://assets/dino/Walk (2).png" type="Texture" id=28]
+[ext_resource path="res://assets/dino/Walk (10).png" type="Texture" id=29]
+[ext_resource path="res://assets/dino/Run (5).png" type="Texture" id=30]
+[ext_resource path="res://assets/dino/Walk (7).png" type="Texture" id=31]
+[ext_resource path="res://assets/dino/Dead (6).png" type="Texture" id=32]
+[ext_resource path="res://assets/dino/Walk (3).png" type="Texture" id=33]
+[ext_resource path="res://assets/dino/Walk (5).png" type="Texture" id=34]
+[ext_resource path="res://assets/dino/Run (7).png" type="Texture" id=35]
+[ext_resource path="res://assets/dino/Dead (2).png" type="Texture" id=36]
+[ext_resource path="res://assets/dino/Dead (3).png" type="Texture" id=37]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "idle",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 28 ), ExtResource( 33 ), ExtResource( 25 ), ExtResource( 34 ), ExtResource( 24 ), ExtResource( 31 ), ExtResource( 26 ), ExtResource( 8 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 20 ), ExtResource( 12 ), ExtResource( 32 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": false,
+"name": "dead",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 17 ), ExtResource( 27 ), ExtResource( 18 ), ExtResource( 30 ), ExtResource( 16 ), ExtResource( 35 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 65.7841, 146.486 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 77.698, 30 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 58.7444, 145.408 )
+
+[node name="Enemy" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 130, -185 )
+frames = SubResource( 1 )
+animation = "walk"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -143.843 )
+shape = SubResource( 2 )
+
+[node name="StompArea2D" type="Area2D" parent="."]
+position = Vector2( 0, -320 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompArea2D"]
+shape = SubResource( 3 )
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2( 0, -143.843 )
+shape = SubResource( 4 )
+[connection signal="area_entered" from="StompArea2D" to="." method="_on_StompArea2D_area_entered"]
+[connection signal="body_entered" from="StompArea2D" to="." method="_on_StompArea2D_body_entered"]
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]

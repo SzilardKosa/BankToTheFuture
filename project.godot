@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Objects/Door.gd"
 }, {
+"base": "Area2D",
+"class": "Heart",
+"language": "GDScript",
+"path": "res://src/Objects/Heart.gd"
+}, {
 "base": "Control",
 "class": "LevelMenu",
 "language": "GDScript",
@@ -53,6 +58,7 @@ _global_script_class_icons={
 "Actor": "",
 "CustomButton": "",
 "Door": "",
+"Heart": "",
 "LevelMenu": "",
 "Shop": "",
 "ShopItem": "",

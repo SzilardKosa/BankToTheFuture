@@ -102,7 +102,7 @@ size_flags_vertical = 0
 expand = true
 texture = ExtResource( 1 )
 label = "1"
-scene_to_load = "res://src/Levels/TestLevelPista.tscn"
+scene_to_load = "res://src/Levels/QuizLevels/Level1.tscn"
 
 [node name="Left2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 margin_left = 260.0
@@ -142,6 +142,7 @@ size_flags_vertical = 0
 expand = true
 texture = ExtResource( 1 )
 label = "3"
+scene_to_load = ""
 
 [node name="Left4" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 margin_left = 897.0
@@ -161,6 +162,7 @@ size_flags_vertical = 0
 expand = true
 texture = ExtResource( 1 )
 label = "4"
+scene_to_load = ""
 
 [node name="Right" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 1520.0

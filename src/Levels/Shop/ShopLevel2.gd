@@ -1,6 +1,12 @@
 extends Node2D
-export var starting_cash = 3000
-export var shopping_list = [["Egg",5],["Milk",2]]
+export var starting_cash = 1500
+export var shopping_list = [["Egg",10],["Bread",1],["Milk",2]]
+#Egg 10-100 300
+#Bread 200-500 1500
+#Milk 150-300 900
+#Apple 25-100 300
+#Flour 100-400 1200
+#Sum 600
 
 var shop_list = []
 # Called when the node enters the scene tree for the first time.

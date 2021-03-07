@@ -9,7 +9,11 @@
 extents = Vector2( 206.469, 268.405 )
 
 [node name="Shop" type="KinematicBody2D"]
+scale = Vector2( 1.2, 1.2 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 6.10352e-05, 26.8701 )
@@ -32,8 +36,8 @@ z_as_relative = false
 margin_left = -10.5646
 margin_right = 1909.44
 margin_bottom = 1077.5
-[connection signal="door_knocked" from="ShopDoor" to="." method="_on_ShopDoor_door_knocked"]
 [connection signal="door_knocked" from="ShopDoor" to="." method="_on_ShopDoor_door_knocked2"]
+[connection signal="door_knocked" from="ShopDoor" to="." method="_on_ShopDoor_door_knocked"]
 [connection signal="bought" from="ShopUI" to="." method="_on_ShopUI_bought"]
 [connection signal="exit" from="ShopUI" to="." method="_on_ShopUI_exit"]
 

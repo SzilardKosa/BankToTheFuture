@@ -15,7 +15,6 @@ func _ready():
 	pass
 
 func setup(list):
-	print(list)
 	var i = 0
 	for sui in shop_item_ui:
 		sui.setVis(false)

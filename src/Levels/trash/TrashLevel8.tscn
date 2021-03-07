@@ -68,7 +68,7 @@ limit_right = 17000
 limit_bottom = 1700
 
 [node name="AnimatedSprite" parent="Player" index="2"]
-frame = 9
+frame = 16
 
 [node name="Labels" type="Node" parent="."]
 

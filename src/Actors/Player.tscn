@@ -18,13 +18,15 @@ frames_boy = ExtResource( 1 )
 frames_girl = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 7.55963, 7.55951 )
 current = true
 process_mode = 0
 limit_left = 0
-limit_bottom = 1088
+limit_bottom = 1090
 limit_smoothed = true
 smoothing_enabled = true
 drag_margin_left = 0.0
+drag_margin_top = 0.5
 drag_margin_right = 0.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
@@ -38,7 +40,7 @@ position = Vector2( -8, -65.85 )
 scale = Vector2( 0.3, 0.3 )
 frames = ExtResource( 3 )
 animation = "run"
-frame = 7
+frame = 5
 playing = true
 
 [node name="TrashPosition" type="Position2D" parent="."]

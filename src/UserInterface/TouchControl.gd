@@ -1,6 +1,6 @@
 extends Control
 
-func _input(event):
+func _input(_event):
 	if Input.get_action_strength("move_right") == 1 :
 		$LeftRight/Right/Right._on_Right_pressed()
 	else:

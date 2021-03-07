@@ -4,11 +4,15 @@ signal ShopUI(boolean)
 signal Bought(value, list)
 var wealth = 0;
 
+export var list = [["Egg",150],["Milk",200]]
+
+
 func _ready():
 	$ShopUI.invis(false)
+	$ShopUI.setup(list)
 	pass # Replace with function body.
 
-func _on_ShopDoor_door_knocked():
+func _on_ShopDoor_door_knocked(_name):
 	emit_signal("ShopUI",true)
 	$ShopUI.invis(true)
 	self.get_parent().get_tree().paused = true
@@ -17,6 +21,7 @@ func _on_ShopDoor_door_knocked():
 
 func setWealth(w):
 	wealth = w
+	$ShopUI.setWealth(w)
 	pass
 
 func _on_ShopUI_exit():
@@ -27,14 +32,12 @@ func _on_ShopUI_exit():
 	pass # Replace with function body.
 
 
-func _on_ShopUI_bought(value, list):
+func _on_ShopUI_bought(value, temp_list):
 	if(value <= wealth):
 		emit_signal("ShopUI",false)
 		$ShopUI.invis(false)
 		self.get_parent().get_tree().paused = false
-		print(value)
-		print(list)
-		emit_signal("Bought",value, list)
+		emit_signal("Bought",value, temp_list)
 	else:
 		reset()
 	pass # Replace with function body.
@@ -45,7 +48,7 @@ func reset():
 
 
 
-func _on_ShopDoor_door_knocked2(name):
+func _on_ShopDoor_door_knocked2(_name):
 	emit_signal("ShopUI",true)
 	$ShopUI.invis(true)
 	self.get_parent().get_tree().paused = true

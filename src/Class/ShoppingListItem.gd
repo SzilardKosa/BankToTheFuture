@@ -33,4 +33,10 @@ func setCurrent(current):
 func setNumber(number):
 	_number = number
 	pass
+func getRealName():
+	for item in GlobalData.shop_item_list:
+		if _value == item[0]:
+			return item[2]
+	return null
+
 

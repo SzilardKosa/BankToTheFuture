@@ -17,6 +17,8 @@ func _ready():
 
 func _on_Shop_ShopUI(boolean):
 	$InterfaceLayer/Control.visible = !boolean
+	$InterfaceLayer/PauseMenu.visible = !boolean
+	$InterfaceLayer/ShoppingList.visible = !boolean
 	pass # Replace with function body.
 
 

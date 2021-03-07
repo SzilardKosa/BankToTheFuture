@@ -203,19 +203,15 @@ limit_right = 7680
 limit_bottom = 860
 
 [node name="AnimatedSprite" parent="Player" index="2"]
-frame = 19
+frame = 18
 
 [node name="Labels" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="Labels"]
-anchor_left = -0.508
-anchor_top = 0.193
-anchor_right = -0.508
-anchor_bottom = 0.193
-margin_left = -264.64
-margin_top = 95.56
-margin_right = 321.36
-margin_bottom = 231.56
+margin_left = -1368.0
+margin_top = 320.0
+margin_right = -782.0
+margin_bottom = 456.0
 custom_fonts/font = SubResource( 6 )
 text = "Itt nincsen semmi!"
 __meta__ = {
@@ -223,14 +219,10 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="Labels"]
-anchor_left = 0.383
-anchor_top = 0.267
-anchor_right = 0.383
-anchor_bottom = 0.267
-margin_left = -383.36
-margin_top = 31.64
-margin_right = 584.64
-margin_bottom = 190.64
+margin_left = 728.0
+margin_top = 312.0
+margin_right = 1696.0
+margin_bottom = 471.0
 custom_fonts/font = SubResource( 6 )
 text = "Dobd ki a szemetet a kukába!"
 autowrap = true
@@ -239,14 +231,10 @@ __meta__ = {
 }
 
 [node name="Label3" type="Label" parent="Labels"]
-anchor_left = 1.262
-anchor_top = 0.23
-anchor_right = 1.262
-anchor_bottom = 0.23
-margin_left = -375.04
-margin_top = 47.6
-margin_right = 728.96
-margin_bottom = 206.6
+margin_left = 2024.0
+margin_top = 256.0
+margin_right = 3128.0
+margin_bottom = 415.0
 custom_fonts/font = SubResource( 6 )
 text = "Akár magasabbról is beleejtheted a kukába a szemetet!"
 autowrap = true
@@ -255,14 +243,10 @@ __meta__ = {
 }
 
 [node name="Label4" type="Label" parent="Labels"]
-anchor_left = 2.158
-anchor_top = 0.178
-anchor_right = 2.158
-anchor_bottom = 0.178
-margin_left = -343.36
-margin_top = -0.240005
-margin_right = 800.64
-margin_bottom = 320.76
+margin_left = 3776.0
+margin_top = 224.0
+margin_right = 4920.0
+margin_bottom = 545.0
 custom_fonts/font = SubResource( 6 )
 text = "Vigyáz, csak a szelektív hulladék gyüjtés szabályainak megfelelő kukába dobhatod őket!"
 autowrap = true
@@ -271,14 +255,10 @@ __meta__ = {
 }
 
 [node name="Label5" type="Label" parent="Labels"]
-anchor_left = 3.029
-anchor_top = 0.163
-anchor_right = 3.029
-anchor_bottom = 0.163
-margin_left = -295.68
-margin_top = 39.96
-margin_right = 848.32
-margin_bottom = 263.96
+margin_left = 5232.0
+margin_top = 208.0
+margin_right = 6376.0
+margin_bottom = 432.0
 custom_fonts/font = SubResource( 6 )
 text = "A pálya akkor ér véget, ha az összes szemetet kidobtad!"
 autowrap = true

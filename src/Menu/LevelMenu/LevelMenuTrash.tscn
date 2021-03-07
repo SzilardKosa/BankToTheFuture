@@ -229,7 +229,7 @@ size_flags_vertical = 0
 expand = true
 texture = ExtResource( 1 )
 label = "7"
-scene_to_load = ""
+scene_to_load = "res://src/Levels/trash/TrashLevel7.tscn"
 
 [node name="Left4" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Buttons2"]
 margin_left = 953.0
@@ -249,7 +249,7 @@ size_flags_vertical = 0
 expand = true
 texture = ExtResource( 1 )
 label = "8"
-scene_to_load = ""
+scene_to_load = "res://src/Levels/trash/TrashLevel8.tscn"
 
 [node name="Right" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 1604.0

@@ -205,19 +205,15 @@ limit_right = 7680
 limit_bottom = 1540
 
 [node name="AnimatedSprite" parent="Player" index="2"]
-frame = 2
+frame = 18
 
 [node name="Labels" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="Labels"]
-anchor_left = -0.508
-anchor_top = 0.193
-anchor_right = -0.508
-anchor_bottom = 0.193
-margin_left = -264.64
-margin_top = 95.56
-margin_right = 321.36
-margin_bottom = 231.56
+margin_left = -1440.0
+margin_top = 328.0
+margin_right = -854.0
+margin_bottom = 464.0
 custom_fonts/font = SubResource( 6 )
 text = "Itt nincsen semmi!"
 __meta__ = {

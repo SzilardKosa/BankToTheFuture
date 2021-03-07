@@ -201,9 +201,6 @@ limit_left = -6400
 limit_right = 17000
 limit_bottom = 1700
 
-[node name="AnimatedSprite" parent="Player" index="2"]
-frame = 19
-
 [node name="Labels" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="Labels"]
@@ -223,7 +220,7 @@ margin_top = 248.0
 margin_right = -4208.0
 margin_bottom = 407.0
 custom_fonts/font = SubResource( 6 )
-text = "... a kukákon kívül. ;) De vajon melyik be kell dobni?"
+text = "... a kukákon kívül. ;) De vajon melyikbe kell dobni?"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

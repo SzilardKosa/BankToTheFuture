@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=50 format=2]
+[gd_resource type="TileSet" load_steps=51 format=2]
 
 [ext_resource path="res://assets/tiles/GrassNormal.png" type="Texture" id=2]
 
@@ -144,6 +144,9 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 
 [sub_resource type="ConvexPolygonShape2D" id=48]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=49]
 points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 
 [resource]
@@ -459,3 +462,24 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
+1/name = "GrassNormal.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 896, 640, 128, 128 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 49 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 49 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0

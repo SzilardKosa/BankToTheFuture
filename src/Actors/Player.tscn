@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Actors/BoyAnimated.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=2]
@@ -6,6 +6,9 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 56 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 31.7459, 10 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 2
@@ -15,11 +18,13 @@ frames_boy = ExtResource( 1 )
 frames_girl = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 7.55963, 7.55951 )
 current = true
 process_mode = 0
 limit_smoothed = true
 smoothing_enabled = true
 drag_margin_left = 0.0
+drag_margin_top = 0.5
 drag_margin_right = 0.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
@@ -38,3 +43,10 @@ playing = true
 
 [node name="TrashPosition" type="Position2D" parent="."]
 position = Vector2( 88, -64 )
+
+[node name="Stomp" type="Area2D" parent="."]
+collision_layer = 2147483649
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stomp"]
+shape = SubResource( 2 )

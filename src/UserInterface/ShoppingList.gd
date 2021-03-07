@@ -1,11 +1,14 @@
 extends Control
+
 signal Done
+
 var ShoppingListItem = load("res://src/Class/ShoppingListItem.gd")
 var List = Array()
 var Wealth = 0
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+
+onready var wealth_label = get_node("WealthLabel/Label")
+onready var shopping_list_label = get_node("ShoppingListLabel/VBoxContainer/HBoxContainer/NameLabel")
+onready var shopping_list_count_label = get_node("ShoppingListLabel/VBoxContainer/HBoxContainer/CountLabel")
 
 func Add_List(text, number):
 	List.append(ShoppingListItem.new(text, false, number))
@@ -13,10 +16,13 @@ func Add_List(text, number):
 	pass
 
 func Get_List():
+	$ShoppingListLabel.setSize()
 	return List
 
 func Clear_List():
-	$CanvasLayer2/ShoppingListLabel.text = ""
+	shopping_list_label.text = ""
+	shopping_list_count_label.text = ""
+	wealth_label.text = ""
 	pass
 
 func Cross_Out_Item(cItem):
@@ -46,13 +52,24 @@ func check():
 func Draw_List():
 	Clear_List()
 	for item in List:
-		$CanvasLayer2/ShoppingListLabel.text += item.getValue() + "  " + str(item.getNumber()) + ":" + str(item.getCurrent())
-		if item.getChecked():
-			$CanvasLayer2/ShoppingListLabel.text += " Checked"
-		$CanvasLayer2/ShoppingListLabel.text += "\n"
+		shopping_list_label.text += item.getRealName()
+		shopping_list_count_label.text += str(item.getCurrent()) + " / " + str(item.getNumber()) + "\n"
+		#if item.getChecked():
+		#	shopping_list_label.text += " Checked"
+		shopping_list_label.text += "\n"
+	$ShoppingListLabel.setSize()
 	pass
 
 func SetWealth(wealth):
 	Wealth = wealth
-	$CanvasLayer2/WealthLabel.text = str(Wealth)
+	wealth_label.text = str(Wealth)
 	pass
+
+func _ready():
+	$ShoppingListLabel.setSize()
+	
+
+
+func _on_HBoxContainer_item_rect_changed():
+	$ShoppingListLabel.setSize()
+	pass # Replace with function body.

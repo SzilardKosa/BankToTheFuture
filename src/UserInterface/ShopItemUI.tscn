@@ -1,93 +1,105 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://assets/eggs/White.png" type="Texture" id=1]
+[ext_resource path="res://assets/ui/fonts/Montserrat-ExtraBold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/shop/price_label.png" type="Texture" id=2]
 [ext_resource path="res://assets/icons/Iconic2048x2048_cropped_55.png" type="Texture" id=3]
 [ext_resource path="res://assets/icons/Iconic2048x2048_cropped_115.png" type="Texture" id=4]
 [ext_resource path="res://assets/icons/Iconic2048x2048_cropped_127.png" type="Texture" id=5]
 [ext_resource path="res://src/UserInterface/ShopItemUI.gd" type="Script" id=6]
+[ext_resource path="res://assets/shop/flour.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
 
 [node name="ShopItemUI" type="Control"]
-margin_left = 309.643
-margin_top = 88.3459
-margin_right = 361.643
-margin_bottom = 88.3459
+margin_left = 322.371
+margin_top = 85.1639
+margin_right = 374.371
+margin_bottom = 85.1639
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
-texture = ExtResource( 1 )
+vis = true
 
 [node name="Item" type="Sprite" parent="."]
-position = Vector2( 2.08069, -0.284958 )
-texture = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 0, -15 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
 
 [node name="Price" type="Label" parent="."]
-margin_left = -25.7798
-margin_top = 50.2996
-margin_right = 14.2202
-margin_bottom = 64.2996
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "150"
+margin_left = -52.3239
+margin_top = 36.2599
+margin_right = 26.6761
+margin_bottom = 76.2599
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "1500"
 align = 1
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="LabelSprite" type="Sprite" parent="Price"]
-position = Vector2( 38.5167, 5.58301 )
-scale = Vector2( 0.218849, 0.164186 )
+position = Vector2( 61.3778, 19.685 )
+scale = Vector2( 0.35, 0.22 )
 z_index = -1
 texture = ExtResource( 2 )
 
 [node name="Count" type="Label" parent="."]
 anchor_right = 0.057
 anchor_bottom = 0.061
-margin_left = 52.6965
-margin_top = -22.999
-margin_right = 60.6965
-margin_bottom = -8.99899
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_left = 60.0
+margin_top = -56.0
+margin_right = 131.036
+margin_bottom = 18.0
+rect_min_size = Vector2( 74, 74 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "0"
 align = 1
+valign = 1
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="LabelSprite" type="Sprite" parent="Count"]
-position = Vector2( 5.53085, 7.02575 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 37, 37 )
+scale = Vector2( 0.5, 0.5 )
 z_index = -2
 texture = ExtResource( 3 )
 
 [node name="Add" type="TextureButton" parent="."]
-margin_left = 55.6487
-margin_top = 18.281
-margin_right = 203.649
-margin_bottom = 166.281
+margin_left = 60.0
+margin_top = 18.0
+margin_right = 208.0
+margin_bottom = 166.0
 rect_scale = Vector2( 0.5, 0.5 )
 texture_normal = ExtResource( 4 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Remove" type="TextureButton" parent="."]
-margin_left = -106.903
-margin_top = 17.2215
-margin_right = 41.0972
-margin_bottom = 165.222
+margin_left = -129.0
+margin_top = 18.0
+margin_right = 19.0002
+margin_bottom = 166.0
 rect_scale = Vector2( 0.5, 0.5 )
 texture_normal = ExtResource( 5 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
+[connection signal="visibility_changed" from="." to="." method="_on_ShopItemUI_visibility_changed"]
 [connection signal="pressed" from="Add" to="." method="_on_Add_pressed"]
 [connection signal="pressed" from="Remove" to="." method="_on_Remove_pressed"]

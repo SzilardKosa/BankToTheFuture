@@ -12,16 +12,17 @@ func _ready():
 	knock_button.visible = false
 	close()
 
-func _on_InteractionArea_body_entered(body):
+func _on_InteractionArea_body_entered(_body):
 	knock_button.visible = true
+	print("knock visible")
 
 
 func _on_InteractionArea_body_exited(body):
-	knock_button.visible = false
+	knock_button.set_deferred("visible", false)
 
 
 func _on_KnockButton_released():
-	knock_button.visible = false
+	knock_button.set_deferred("visible", false)
 	emit_signal("door_knocked", self.name)	
 	
 	
@@ -29,7 +30,7 @@ func _on_KnockButton_released():
 func open():
 	sprite.animation = "open"
 	collision_shape.disabled = true
-	interaction_area.visible = false
+	interaction_area.set_deferred("visible", false)
 #	interaction_area.collision_mask = 0x00
 	
 func close():

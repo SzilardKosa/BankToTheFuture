@@ -102,7 +102,7 @@ limit_right = 8200
 limit_bottom = 1090
 
 [node name="AnimatedSprite" parent="Player" index="2"]
-frame = 19
+frame = 15
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 8 )]
 
@@ -144,7 +144,6 @@ position = Vector2( 4717.8, 891.918 )
 position = Vector2( 5277.28, 902.609 )
 
 [node name="MovingPlatformA" parent="." instance=ExtResource( 10 )]
-position = Vector2( 0, 497.669 )
 
 [node name="TileMap" parent="MovingPlatformA" index="0"]
 tile_data = PoolIntArray( 327710, 0, 65542, 327711, 0, 2, 327712, 0, 5 )

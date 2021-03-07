@@ -23,6 +23,8 @@ func _on_KnockButton_released():
 	knock_button.visible = false
 	emit_signal("door_knocked", self.name)	
 	
+func knock():
+	knock_button.visible = true
 	
 
 func open():

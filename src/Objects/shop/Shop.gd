@@ -28,6 +28,7 @@ func _on_ShopUI_exit():
 	
 	emit_signal("ShopUI",false)
 	$ShopUI.invis(false)
+	$ShopDoor.knock()
 	self.get_parent().get_tree().paused = false
 	pass # Replace with function body.
 
@@ -38,6 +39,8 @@ func _on_ShopUI_bought(value, temp_list):
 		$ShopUI.invis(false)
 		self.get_parent().get_tree().paused = false
 		emit_signal("Bought",value, temp_list)
+		
+		$ShopDoor.knock()
 	else:
 		reset()
 	pass # Replace with function body.

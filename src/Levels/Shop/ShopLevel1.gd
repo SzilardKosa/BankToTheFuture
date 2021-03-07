@@ -31,6 +31,8 @@ func _on_Shop_Bought(value, list):
 		
 	for items in list:
 		$InterfaceLayer/ShoppingList.Bought_Item(items[0],items[1])
+	
+	$InterfaceLayer/ShoppingList.SetWealth(starting_cash)
 	pass # Replace with function body.
 
 

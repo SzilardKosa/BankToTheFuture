@@ -1,6 +1,7 @@
 extends Control
 
 signal Done
+signal Egg
 
 var ShoppingListItem = load("res://src/Class/ShoppingListItem.gd")
 var List = Array()
@@ -43,6 +44,8 @@ func check():
 	for item in List:
 		if !item.getChecked():
 			return
+		if item.getValue() == "Egg":
+			emit_signal("Egg")
 	emit_signal("Done")
 	pass
 	
@@ -72,3 +75,4 @@ func _ready():
 func _on_HBoxContainer_item_rect_changed():
 	$ShoppingListLabel.setSize()
 	pass # Replace with function body.
+

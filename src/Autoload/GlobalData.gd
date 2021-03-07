@@ -34,5 +34,14 @@ const facts = [
 "Tudtad-e, hogy az újrahasznosítással készült hullámkartonokból irodabútorokat, kényelmes foteleket készítenek, melyek teherbírása akár 100 kg is lehet?"
 ]
 
+const shop_facts = [
+	"Tudtad-e, hogy egy átlagos nő 25184 óra 53 percet tölt vásárlással az élete során?",
+	"Tudtad-e, hogy a vásárlókat sokszor vásárlásra késztetik a leárazások, még akkor is ha az eredeti árral nem voltak tisztában?",
+	"Tudtad-e, hogy a legöregebb fent maradt úgyfélszolgálati panasz több mint 4000 éves? Mezopotámiában egy agyag ékírásos táblán maradt fent."
+]
+
 func get_random_trash_fun_fact():
 	return facts[randi() % facts.size()]
+
+func get_random_shop_fun_fact():
+	return shop_facts[randi() % shop_facts.size()]

@@ -5,6 +5,7 @@ export var shopping_list = [["Egg",5],["Milk",2]]
 var shop_list = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomize()
 	for item in shopping_list:
 		$InterfaceLayer/ShoppingList.Add_List(item[0], item[1])
 	$InterfaceLayer/ShoppingList.SetWealth(starting_cash)
@@ -13,6 +14,8 @@ func _ready():
 		if child is Shop:
 			shop_list.append(child)
 			child.setWealth(starting_cash)
+	$Label2.hide()
+	$Label3.show()
 	pass # Replace with function body.
 
 func _on_Shop_ShopUI(boolean):
@@ -38,7 +41,7 @@ func _on_Shop_Bought(value, list):
 
 
 func _on_ShoppingList_Done():
-	$InterfaceLayer/ScoreMenu.show_menu("Gratulálunk!", "Pontszám : " + str(starting_cash))
+	$InterfaceLayer/ScoreMenu.show_menu("Gratulálunk!", GlobalData.get_random_shop_fun_fact())
 	pass # Replace with function body.
 
 func _on_Enemy_player_hurt(this):
@@ -55,4 +58,10 @@ func _on_Ninja_player_hurt(this):
 	for child in shop_list:
 		child.setWealth(starting_cash)
 	this.Done()
+	pass # Replace with function body.
+
+
+func _on_ShoppingList_Egg():
+	$Label2.show()
+	$Label3.hide()
 	pass # Replace with function body.

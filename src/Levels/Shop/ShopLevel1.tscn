@@ -9,9 +9,9 @@
 [ext_resource path="res://src/UserInterface/PauseMenu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Background/ParallaxBackground.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Actors/Ninja.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/dynamic_fonts/CustomButton.tres" type="DynamicFont" id=10]
 [ext_resource path="res://src/Platform/MovingPlatform.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/Menu/ScoreMenu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/dynamic_fonts/Level1.tres" type="DynamicFont" id=13]
 
 [sub_resource type="Animation" id=1]
 length = 8.0
@@ -71,7 +71,7 @@ limit_right = 8200
 limit_bottom = 1090
 
 [node name="AnimatedSprite" parent="Player" index="2"]
-frame = 5
+frame = 2
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 8 )]
 
@@ -97,24 +97,28 @@ collision_mask = 0
 list = [ [ "Milk", 500 ], [ "Milk", 750 ], [ "Milk", 1000 ] ]
 
 [node name="Label" type="Label" parent="."]
-margin_left = 311.127
-margin_top = 528.916
-margin_right = 351.127
-margin_bottom = 542.916
-custom_fonts/font = ExtResource( 10 )
-text = "Kérlek, hozz a boltból 
-ezt és ezt és ezt.
-Adok ... tallért"
+margin_left = 533.881
+margin_top = 370.345
+margin_right = 1273.88
+margin_bottom = 671.345
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Kérlek, hozz a boltból 5 tojást
+ és 2 tejet.
+Adok 3000 tallért. Próbálj meg
+ minél kevesebbet költeni!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 2132.63
-margin_top = 500.632
-margin_right = 2858.63
-margin_bottom = 743.632
-custom_fonts/font = ExtResource( 10 )
+visible = false
+margin_left = 2140.18
+margin_top = 406.245
+margin_right = 3104.18
+margin_bottom = 649.245
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Nagyon ügyes vagy, már csak
 két tejet kell vásárolnod."
 __meta__ = {
@@ -122,25 +126,55 @@ __meta__ = {
 }
 
 [node name="Label3" type="Label" parent="."]
-margin_left = 2143.95
-margin_top = 288.5
-margin_right = 3107.95
-margin_bottom = 531.5
-custom_fonts/font = ExtResource( 10 )
-text = "Lehet nem ártott volna tojást venned, nem biztos, 
-hogy más boltban jobb áron találsz."
+margin_left = 2137.06
+margin_top = 407.52
+margin_right = 3101.06
+margin_bottom = 650.52
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Lehet nem ártott volna tojást venned, 
+nem biztos, hogy más boltban jobb 
+áron találsz."
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label4" type="Label" parent="."]
-margin_left = 4514.17
-margin_top = 302.642
-margin_right = 5478.17
-margin_bottom = 545.642
-custom_fonts/font = ExtResource( 10 )
+margin_left = 4635.16
+margin_top = 381.399
+margin_right = 5657.16
+margin_bottom = 606.399
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Habár itt volt tej, számodra túl drága volt.
 Próbáld meg egy harmadik boltban!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="."]
+margin_left = 5953.69
+margin_top = -67.6139
+margin_right = 6975.69
+margin_bottom = 157.386
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Itt nem tudsz felugrani.
+Talán van egy rejtett útvonal?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="."]
+margin_left = 6862.41
+margin_top = 463.362
+margin_right = 7884.41
+margin_bottom = 688.362
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Vigyázz, egy ninja!
+Ha hozzád ér, ellopja 500 tallérod.
+Legyél óvatos!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -157,6 +191,7 @@ tile_data = PoolIntArray( -1048590, 0, 196614, -65416, 0, 65542, -65415, 0, 2, -
 [node name="AnimationPlayer" parent="MovingPlatform2" index="1"]
 anims/default = SubResource( 1 )
 [connection signal="Done" from="InterfaceLayer/ShoppingList" to="." method="_on_ShoppingList_Done"]
+[connection signal="Egg" from="InterfaceLayer/ShoppingList" to="." method="_on_ShoppingList_Egg"]
 [connection signal="Bought" from="Shop" to="." method="_on_Shop_Bought"]
 [connection signal="ShopUI" from="Shop" to="." method="_on_Shop_ShopUI"]
 [connection signal="Bought" from="Shop2" to="." method="_on_Shop_Bought"]

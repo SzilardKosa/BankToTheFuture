@@ -11,6 +11,7 @@ export var shopping_list = [["Egg",10],["Bread",1],["Milk",2]]
 var shop_list = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomize()
 	for item in shopping_list:
 		$InterfaceLayer/ShoppingList.Add_List(item[0], item[1])
 	$InterfaceLayer/ShoppingList.SetWealth(starting_cash)
@@ -40,7 +41,7 @@ func _on_Shop_Bought(value, list):
 
 
 func _on_ShoppingList_Done():
-	$InterfaceLayer/ScoreMenu.show_menu("Gratulálunk!", "Pontszám : " + str(starting_cash))
+	$InterfaceLayer/ScoreMenu.show_menu("Gratulálunk!", GlobalData.get_random_shop_fun_fact())
 	pass # Replace with function body.
 
 

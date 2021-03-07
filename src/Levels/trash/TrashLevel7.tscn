@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tiles/TileSet.tres" type="TileSet" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://src/UserInterface/PauseMenu.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Menu/ScoreMenu.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/Objects/trash/PlasticTrash1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/Objects/trashcan/MixedTrashCan.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Objects/trash/MixedTrash2.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Objects/trash/PaperTrash3.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/Levels/TestLevelSzilard.gd" type="Script" id=18]
 
@@ -69,7 +71,7 @@ limit_right = 7680
 limit_bottom = 860
 
 [node name="AnimatedSprite" parent="Player" index="2"]
-frame = 11
+frame = 15
 
 [node name="Labels" type="Node" parent="."]
 
@@ -87,26 +89,17 @@ __meta__ = {
 [node name="PaperTrashCan" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1473, 704 )
 
-[node name="PaperTrashCan2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1601, 704 )
-
 [node name="PaperTrashCan3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1729, 704 )
 
 [node name="PaperTrashCan4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1601, 512 )
 
-[node name="PaperTrashCan5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1729, 512 )
-
 [node name="PaperTrashCan6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1857, 320 )
+position = Vector2( 1729, 320 )
 
 [node name="PaperTrashCan7" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1857, 512 )
-
-[node name="PaperTrashCan8" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1729, 320 )
 
 [node name="PaperTrashCan9" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1857, 128 )
@@ -123,10 +116,19 @@ position = Vector2( 777, 704 )
 [node name="PaperTrash3" parent="." instance=ExtResource( 15 )]
 position = Vector2( 1105, 704 )
 
-[node name="PaperTrash4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1265, 704 )
-
 [node name="PlasticTrash1" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1881, 704 )
+
+[node name="MixedTrashCan" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1601, 704 )
+
+[node name="MixedTrashCan2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1729, 512 )
+
+[node name="MixedTrashCan3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1857, 320 )
+
+[node name="MixedTrash2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1273, 704 )
 
 [editable path="Player"]

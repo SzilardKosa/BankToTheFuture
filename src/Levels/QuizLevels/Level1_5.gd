@@ -134,7 +134,7 @@ func exit_quiz_mode(success):
 			messeges.get_node("Label5").visible = true
 			level_ui.visible = true
 			if player_hearts == 0:
-				messeges.get_node("Label7").text = "Nem vagyok orvos, de a nulla szív határozottan nem egészséges. Már tárcsázom is a mentőket: 105"
+				messeges.get_node("Label7").text = "Nem vagyok orvos, de a nulla szív határozottan nem egészséges. Már tárcsázom is a mentőket: 112"
 				messeges.get_node("Label8").text = "Jó hírek! Gyorsan kiérkeztek és kettő szívet is tudnak neked adni. Huhh, ez necces volt. A többi pályán óvatosabban, nem lesz mindig ilyen szerencséd"
 				hearts[1].position = Vector2(7744, 640)
 				hearts[2].position = Vector2(7552, 640)

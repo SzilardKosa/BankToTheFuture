@@ -37,11 +37,11 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_right = 1820.0
+margin_right = 1970.0
 margin_bottom = 980.0
 
 [node name="Title" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_right = 1820.0
+margin_right = 1970.0
 margin_bottom = 300.0
 
 [node name="CustomButton" parent="MarginContainer/VBoxContainer/Title" instance=ExtResource( 4 )]
@@ -56,23 +56,23 @@ scene_to_load = "res://src/Menu/Settings.tscn"
 
 [node name="TitleLable" parent="MarginContainer/VBoxContainer/Title" instance=ExtResource( 6 )]
 margin_left = 304.0
-margin_right = 1516.0
+margin_right = 1666.0
 margin_bottom = 300.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Bank to the future"
+text = "Pénzügyi Platformer"
 align = 1
 valign = 1
 
 [node name="Padding" type="Control" parent="MarginContainer/VBoxContainer/Title"]
-margin_left = 1520.0
-margin_right = 1820.0
+margin_left = 1670.0
+margin_right = 1970.0
 margin_bottom = 300.0
 rect_min_size = Vector2( 300, 0 )
 
 [node name="MarginContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_top = 304.0
-margin_right = 1820.0
+margin_right = 1970.0
 margin_bottom = 980.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -81,13 +81,13 @@ __meta__ = {
 }
 
 [node name="left" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer"]
-margin_right = 453.0
+margin_right = 490.0
 margin_bottom = 676.0
 size_flags_horizontal = 3
 
 [node name="Buttons" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
-margin_left = 457.0
-margin_right = 1363.0
+margin_left = 494.0
+margin_right = 1475.0
 margin_bottom = 676.0
 size_flags_horizontal = 7
 size_flags_vertical = 3
@@ -97,29 +97,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ShopButton" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons" instance=ExtResource( 7 )]
-margin_right = 906.0
+[node name="TrashButton" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons" instance=ExtResource( 7 )]
+margin_right = 981.0
 margin_bottom = 192.0
+label = "Szemétszedő akció"
+scene_to_load = "res://src/Menu/LevelMenu/LevelMenuTrash.tscn"
+
+[node name="ShopButton" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons" instance=ExtResource( 7 )]
+margin_top = 242.0
+margin_right = 981.0
+margin_bottom = 434.0
 label = "A nagy bevásárlás"
 scene_to_load = "res://src/Menu/LevelMenu/LevelMenu.tscn"
 
 [node name="QuizButton" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons" instance=ExtResource( 7 )]
-margin_top = 242.0
-margin_right = 906.0
-margin_bottom = 434.0
+margin_top = 484.0
+margin_right = 981.0
+margin_bottom = 676.0
 label = "Harcos kvíz"
 scene_to_load = "res://src/Menu/LevelMenu/LevelMenuQuiz.tscn"
 
-[node name="TrashButton" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons" instance=ExtResource( 7 )]
-margin_top = 484.0
-margin_right = 906.0
-margin_bottom = 676.0
-label = "Szemétszedő akció"
-scene_to_load = "res://src/Menu/LevelMenu/LevelMenuTrash.tscn"
-
 [node name="right" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer"]
-margin_left = 1367.0
-margin_right = 1820.0
+margin_left = 1479.0
+margin_right = 1970.0
 margin_bottom = 676.0
 size_flags_horizontal = 3
 

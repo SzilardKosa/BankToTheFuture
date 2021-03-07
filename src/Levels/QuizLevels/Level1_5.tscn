@@ -257,7 +257,7 @@ limit_bottom = 1080
 offset_v = -0.5
 
 [node name="AnimatedSprite" parent="GameLayer/Player" index="2"]
-frame = 11
+frame = 3
 
 [node name="InvinciblePlayer" type="AnimationPlayer" parent="GameLayer/Player"]
 autoplay = "def"

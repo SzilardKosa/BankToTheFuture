@@ -29,15 +29,15 @@ animations = [ {
 "name": "idle",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 15 ) ],
-"loop": true,
-"name": "fadein",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "run",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "fadein",
+"speed": 5.0
 } ]
 
 [sub_resource type="Animation" id=2]
@@ -72,13 +72,13 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 147.104, 218.902 )
+extents = Vector2( 188.57, 240.806 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 77.698, 30 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 126.9, 225.636 )
+extents = Vector2( 170.099, 228.061 )
 
 [node name="Ninja" type="KinematicBody2D"]
 scale = Vector2( 0.3, 0.3 )
@@ -89,7 +89,8 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -2.4505, -232.143 )
 frames = SubResource( 1 )
-animation = "fadein"
+animation = "run"
+frame = 8
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
@@ -110,7 +111,7 @@ shape = SubResource( 5 )
 [node name="PlayerDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
-position = Vector2( 62.858, -233.64 )
+position = Vector2( -0.138107, -233.64 )
 shape = SubResource( 6 )
 [connection signal="animation_finished" from="AnimatedSprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]

@@ -22,7 +22,7 @@ func Get_List():
 func Clear_List():
 	shopping_list_label.text = ""
 	shopping_list_count_label.text = ""
-	wealth_label.text = ""
+	wealth_label.text = str(Wealth)
 	pass
 
 func Cross_Out_Item(cItem):
@@ -32,8 +32,6 @@ func Cross_Out_Item(cItem):
 	pass
 
 func Bought_Item(name, count):
-	print(name)
-	print(count)
 	for item in List:
 		if item.getValue() == name:
 			item.setCurrent(count)
@@ -61,6 +59,7 @@ func Draw_List():
 	pass
 
 func SetWealth(wealth):
+	print(wealth)
 	Wealth = wealth
 	wealth_label.text = str(Wealth)
 	pass

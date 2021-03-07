@@ -67,11 +67,12 @@ speed = Vector2( 800, 1800 )
 gravity = 6000.0
 
 [node name="Camera2D" parent="Player" index="0"]
+limit_left = 0
 limit_right = 8200
 limit_bottom = 1090
 
 [node name="AnimatedSprite" parent="Player" index="2"]
-frame = 2
+frame = 16
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 8 )]
 
@@ -90,7 +91,7 @@ collision_mask = 0
 list = [ [ "Egg", 500 ], [ "Milk", 3500 ], [ "Flour", 1000 ], [ "Bread", 450 ], [ "Apple", 10 ] ]
 
 [node name="Shop3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 7140.59, -421.114 )
+position = Vector2( 7140.59, -420.114 )
 z_index = -5
 collision_layer = 8
 collision_mask = 0

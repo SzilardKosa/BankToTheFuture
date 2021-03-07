@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/ui/fonts/AkayaKanadaka-Regular.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 512, 81.5146 )
+extents = Vector2( 88.0909, 81.5146 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 60
@@ -13,7 +13,7 @@ font_data = ExtResource( 3 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "hide"
-length = 4.0
+length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:self_modulate")
 tracks/0/interp = 1
@@ -21,7 +21,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3.8, 4 ),
+"times": PoolRealArray( 0, 0.9, 1.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -33,7 +33,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 4 ),
+"times": PoolRealArray( 0, 1.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -107,7 +107,6 @@ position = Vector2( 0, -71 )
 shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_left = -640.0
 margin_top = -640.0
 margin_right = 640.0

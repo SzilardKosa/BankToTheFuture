@@ -72,7 +72,7 @@ limit_right = 7680
 limit_bottom = 1100
 
 [node name="AnimatedSprite" parent="Player" index="2"]
-frame = 0
+frame = 15
 
 [node name="Labels" type="Node" parent="."]
 
@@ -117,7 +117,7 @@ margin_top = 224.0
 margin_right = 4920.0
 margin_bottom = 545.0
 custom_fonts/font = SubResource( 2 )
-text = "Vigyáz, csak a szelektív hulladék gyüjtés szabályainak megfelelő kukába dobhatod őket!"
+text = "Vigyázz, csak a szelektív hulladékgyűjtés szabályainak megfelelő kukába dobhatod őket!"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

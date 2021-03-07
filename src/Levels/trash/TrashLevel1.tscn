@@ -72,7 +72,11 @@ limit_right = 7680
 limit_bottom = 1100
 
 [node name="AnimatedSprite" parent="Player" index="2"]
+<<<<<<< Updated upstream
 frame = 4
+=======
+frame = 16
+>>>>>>> Stashed changes
 
 [node name="Labels" type="Node" parent="."]
 

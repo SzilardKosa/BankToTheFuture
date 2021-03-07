@@ -16,8 +16,6 @@ func _ready() -> void:
 	#if path == null:
 	#	print("Error: nincs enemy path, ", self.name)
 	#print(path.curve.get_baked_points())
-	stomp_area.connect("area_entered", self, "_on_StompArea2D_area_entered")
-	player_detector.connect("body_entered", self, "_on_PlayerDetector_body_entered")
 	_velocity.x = -speed.x
 
 

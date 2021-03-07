@@ -37,14 +37,14 @@ func Bought_Item(name, count):
 	for item in List:
 		if item.getValue() == name:
 			item.setCurrent(count)
-	
+	check()
 	Draw_List()
 	pass
 
 func check():
 	for item in List:
 		if !item.getChecked():
-			pass
+			return
 	emit_signal("Done")
 	pass
 	

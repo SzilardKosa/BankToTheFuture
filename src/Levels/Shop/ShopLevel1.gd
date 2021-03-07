@@ -23,19 +23,21 @@ func _on_Shop_ShopUI(boolean):
 
 
 func _on_Shop_Bought(value, list):
-	for items in list:
-		$InterfaceLayer/ShoppingList.Bought_Item(items[0],items[1]);
 	starting_cash -= value
 	$InterfaceLayer/ShoppingList.SetWealth(starting_cash)
 	
 	for child in shop_list:
 		child.setWealth(starting_cash)
+		
+	for items in list:
+		$InterfaceLayer/ShoppingList.Bought_Item(items[0],items[1])
 	pass # Replace with function body.
+
 
 
 func _on_ShoppingList_Done():
+	$InterfaceLayer/ScoreMenu.show_menu("Gratulálunk!", "Pontszám : " + str(starting_cash))
 	pass # Replace with function body.
-
 
 func _on_Enemy_player_hurt(this):
 	starting_cash = starting_cash - 500
@@ -47,5 +49,8 @@ func _on_Enemy_player_hurt(this):
 func _on_Ninja_player_hurt(this):
 	starting_cash = starting_cash - 500
 	$InterfaceLayer/ShoppingList.SetWealth(starting_cash)
+	
+	for child in shop_list:
+		child.setWealth(starting_cash)
 	this.Done()
 	pass # Replace with function body.

@@ -24,15 +24,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 15 ) ],
-"loop": true,
-"name": "fadein",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "idle",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "fadein",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 13 ) ],
 "loop": true,
@@ -40,7 +40,7 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 resource_name = "FadeIn"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -55,7 +55,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 resource_name = "show"
 length = 0.001
 tracks/0/type = "value"
@@ -71,13 +71,13 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 147.104, 218.902 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 77.698, 30 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 126.9, 225.636 )
 
 [node name="Ninja" type="KinematicBody2D"]
@@ -93,26 +93,24 @@ animation = "fadein"
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
-anims/FadeIn = SubResource( 5 )
-anims/show = SubResource( 6 )
+anims/FadeIn = SubResource( 2 )
+anims/show = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 4.48987, -231.395 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="StompArea2D" type="Area2D" parent="."]
 position = Vector2( 0, -320 )
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompArea2D"]
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="PlayerDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
 position = Vector2( 62.858, -233.64 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 [connection signal="animation_finished" from="AnimatedSprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-[connection signal="area_entered" from="StompArea2D" to="." method="_on_StompArea2D_area_entered"]
-[connection signal="body_entered" from="StompArea2D" to="." method="_on_StompArea2D_body_entered"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]

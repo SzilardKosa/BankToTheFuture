@@ -29,17 +29,18 @@ func _on_Shop_ShopUI(boolean):
 
 
 func _on_Shop_Bought(value, list):
-	for items in list:
-		$InterfaceLayer/ShoppingList.Bought_Item(items[0],items[1]);
 	starting_cash -= value
 	$InterfaceLayer/ShoppingList.SetWealth(starting_cash)
 	
 	for child in shop_list:
 		child.setWealth(starting_cash)
+	for items in list:
+		$InterfaceLayer/ShoppingList.Bought_Item(items[0],items[1]);
 	pass # Replace with function body.
 
 
 func _on_ShoppingList_Done():
+	$InterfaceLayer/ScoreMenu.show_menu("Gratulálunk!", "Pontszám : " + str(starting_cash))
 	pass # Replace with function body.
 
 

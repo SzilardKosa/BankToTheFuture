@@ -102,19 +102,19 @@ size_flags_vertical = 0
 expand = true
 texture = ExtResource( 1 )
 label = "1"
-scene_to_load = "res://src/Levels/QuizLevels/Level1.tscn"
+scene_to_load = "res://src/Levels/QuizLevels/Level1_5.tscn"
 
 [node name="Left2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 margin_left = 260.0
-margin_right = 314.0
+margin_right = 396.0
 margin_bottom = 676.0
 rect_min_size = Vector2( 15, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Level2" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons" instance=ExtResource( 2 )]
-margin_left = 318.0
-margin_right = 574.0
+margin_left = 400.0
+margin_right = 656.0
 margin_bottom = 256.0
 rect_min_size = Vector2( 256, 256 )
 size_flags_horizontal = 0
@@ -122,17 +122,19 @@ size_flags_vertical = 0
 expand = true
 texture = ExtResource( 1 )
 label = "2"
-scene_to_load = "res://src/Levels/TestLevelPista.tscn"
+scene_to_load = "res://src/Levels/QuizLevels/Level2.tscn"
 
 [node name="Left3" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
-margin_left = 578.0
-margin_right = 633.0
+margin_left = 660.0
+margin_right = 934.0
 margin_bottom = 676.0
 rect_min_size = Vector2( 15, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
 
 [node name="Level3" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons" instance=ExtResource( 2 )]
+visible = false
 margin_left = 637.0
 margin_right = 893.0
 margin_bottom = 256.0
@@ -145,16 +147,18 @@ label = "3"
 scene_to_load = ""
 
 [node name="Left4" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
-margin_left = 897.0
-margin_right = 952.0
+margin_left = 938.0
+margin_right = 1212.0
 margin_bottom = 676.0
 rect_min_size = Vector2( 15, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
 
 [node name="Level4" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons" instance=ExtResource( 2 )]
-margin_left = 956.0
-margin_right = 1212.0
+visible = false
+margin_left = 955.0
+margin_right = 1211.0
 margin_bottom = 256.0
 rect_min_size = Vector2( 256, 256 )
 size_flags_horizontal = 0

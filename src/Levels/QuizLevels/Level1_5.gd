@@ -4,7 +4,9 @@ onready var level_ui = $InterfaceLayer/LevelUI
 onready var control = $InterfaceLayer/Control
 onready var pause_menu = $InterfaceLayer/PauseMenu
 onready var quiz_ui = $InterfaceLayer/QuizUI
+onready var warning = $InterfaceLayer/Warning
 onready var quiz_back = $InterfaceLayer/QuizBack
+onready var score_menu = $InterfaceLayer/ScoreMenu
 onready var player = $GameLayer/Player
 onready var level_end = $GameLayer/LevelEnd
 onready var doors = $GameLayer/Doors.get_children()
@@ -22,6 +24,8 @@ const questions = [["Mi a magyar forint devizakódja?", "HUF", "EUR", "USD", "Ft
 					["Mikor NEM fizetünk áfát?", "Havi munkabér utalásakor", "Szupermarketből való vásárláskor", "Online ételrendeléskor", "Iskolai büfézéskor"], \
 					["Egy-két-há", "Kurva anyád", "Négy-öt-hat", "Hét-Nyolc", "Kilenc"]]
 const info_texts = ["Az általános forgalmi adó (áfa) egy olyan adó, melyet a  végfogyasztásra vetik ki. Azaz minden boltból vásárolt termék esetén a vásárló által fizetett ár már tartalmazza az áfát."]
+var final_text = "Tudtad, hogy az Európai Unión belül Magyarországon a legnagyobb az áfa? Hazánkban 27%, ezzel még a világranglista negyedik helyére is felfértünk."
+
 var active_door_index = -1
 var times_end_reached = 0
 var enemies_killed = 0
@@ -156,9 +160,13 @@ func calc_set_progress():
 
 
 func game_over():
+	if player.global_position.x > 8000:
+		warning.show_warning("Figyi, ha elfogynak a szíveid, akkor újra kell kezdened a pályát. De ez mégis csak az első, így megengedem hogy folytasd, mert én kedves vagyok.", 2.5)
 	print("game over")
 
 func level_done():
+	score_menu.next_screen = "res://src/Levels/QuizLevels/Level2.tscn"
+	score_menu.show_menu("Gratulálok!", final_text)
 	print("level done")
 
 func prepare_door_tutorial():

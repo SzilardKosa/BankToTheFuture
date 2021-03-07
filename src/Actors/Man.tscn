@@ -1,0 +1,40 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://src/Actors/Actor.gd" type="Script" id=1]
+[ext_resource path="res://assets/man/Idle__000.png" type="Texture" id=2]
+[ext_resource path="res://assets/man/Idle__004.png" type="Texture" id=3]
+[ext_resource path="res://assets/man/Idle__002.png" type="Texture" id=4]
+[ext_resource path="res://assets/man/Idle__005.png" type="Texture" id=5]
+[ext_resource path="res://assets/man/Idle__001.png" type="Texture" id=6]
+[ext_resource path="res://assets/man/Idle__006.png" type="Texture" id=7]
+[ext_resource path="res://assets/man/Idle__007.png" type="Texture" id=8]
+[ext_resource path="res://assets/man/Idle__008.png" type="Texture" id=9]
+[ext_resource path="res://assets/man/Idle__009.png" type="Texture" id=10]
+[ext_resource path="res://assets/man/Idle__003.png" type="Texture" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 122.789, 422.462 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+} ]
+
+[node name="Actor" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 2147483649
+script = ExtResource( 1 )
+speed = Vector2( 0, 0 )
+gravity = 60000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "Idle"
+frame = 1
+playing = true

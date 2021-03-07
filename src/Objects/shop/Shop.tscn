@@ -9,7 +9,11 @@
 extents = Vector2( 206.469, 268.405 )
 
 [node name="Shop" type="KinematicBody2D"]
+scale = Vector2( 1.2, 1.2 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 6.10352e-05, 26.8701 )

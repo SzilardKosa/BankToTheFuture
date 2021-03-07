@@ -8,13 +8,13 @@
 [ext_resource path="res://src/UserInterface/ShopItemUI.gd" type="Script" id=6]
 [ext_resource path="res://assets/shop/flour.png" type="Texture" id=7]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 32
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -42,7 +42,7 @@ margin_left = -52.3239
 margin_top = 36.2599
 margin_right = 26.6761
 margin_bottom = 76.2599
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "1500"
 align = 1
@@ -64,7 +64,7 @@ margin_top = -56.0
 margin_right = 131.036
 margin_bottom = 18.0
 rect_min_size = Vector2( 74, 74 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "0"
 align = 1

@@ -12,7 +12,6 @@ func _ready():
 	close()
 
 func _on_InteractionArea_body_entered(_body):
-	print("ALMA")
 	knock_button.visible = true
 
 

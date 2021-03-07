@@ -46,7 +46,6 @@ func _on_dropped():
 	hide_name()
 
 func _on_right_trash():
-	print("right trash")
 	trash_count -= 1
 	update_counter()
 	if trash_count == 0:
@@ -63,7 +62,7 @@ func _on_wrong_trash():
 			warning.show_warning(warning_texts[2], 12)
 
 func game_finished():
-	score_screen.show_menu("Gratulálunk!", "Tudtad, hogy az elefántok állva alszanak?")
+	score_screen.show_menu("Gratulálunk!", GlobalData.get_random_trash_fun_fact())
 
 func update_counter():
 	counter_label.text = "%d/%d" % [total_num, total_num - trash_count]

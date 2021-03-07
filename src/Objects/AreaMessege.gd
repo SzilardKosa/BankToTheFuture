@@ -2,6 +2,7 @@ extends Area2D
 
 onready var anim_player = $AnimationPlayer
 onready var label = $Label
+export var text: String setget set_text
 
 func _ready():
 	label.set_deferred("visible", false)
@@ -20,3 +21,7 @@ func _on_Info_body_entered(body):
 
 func _on_Info_body_exited(body):
 	anim_player.play("hide")
+	
+func set_text(value):
+	text = value
+	get_node("Label").text = text

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tiles/TileSet.tres" type="TileSet" id=2]
@@ -17,7 +17,7 @@
 [ext_resource path="res://src/Objects/Info.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=16]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 length = 6.0
 loop = true
 tracks/0/type = "value"
@@ -33,7 +33,7 @@ tracks/0/keys = {
 "values": [ Vector2( 896, 896 ), Vector2( 896, 384 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 length = 12.0
 loop = true
 tracks/0/type = "value"
@@ -49,20 +49,15 @@ tracks/0/keys = {
 "values": [ Vector2( 64, 512 ), Vector2( 1152, 512 ) ]
 }
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 size = 60
 outline_size = 7
 outline_color = Color( 1, 1, 1, 0.352941 )
 font_data = ExtResource( 14 )
 
-[sub_resource type="Curve2D" id=5]
+[sub_resource type="Curve2D" id=4]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 232, 496, 0, 0, 0, 0, 1080, 840, 0, 0, 0, 0, 1768, 808, 0, 0, 0, 0, 1984, 608, 0, 0, 0, 0, 2712, 104, 0, 0, 0, 0, 3688, 240, 0, 0, 0, 0, 4976, 1104, 0, 0, 0, 0, 6312, 160, 0, 0, 0, 0, 7016, 128 )
-}
-
-[sub_resource type="Curve2D" id=1]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 576, 704, 0, 0, 0, 0, 896, 704, 0, 0, 0, 0, 896, 704 )
 }
 
 [node name="TestLevel" type="Node2D"]
@@ -112,6 +107,8 @@ z_index = 1
 speed = Vector2( 800, 1800 )
 gravity = 6000.0
 
+[node name="Enemies" type="Node2D" parent="GameLayer"]
+
 [node name="MovingPlatforms" type="Node2D" parent="GameLayer"]
 
 [node name="MovingPlatform" type="KinematicBody2D" parent="GameLayer/MovingPlatforms"]
@@ -134,7 +131,7 @@ tile_data = PoolIntArray( -589833, 0, 65542, -589832, 0, 2, -589831, 0, 2, -5898
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GameLayer/MovingPlatforms/MovingPlatform"]
 autoplay = "default"
 playback_process_mode = 0
-anims/default = SubResource( 2 )
+anims/default = SubResource( 1 )
 
 [node name="MovingPlatform2" type="KinematicBody2D" parent="GameLayer/MovingPlatforms"]
 position = Vector2( 608, 512 )
@@ -155,7 +152,7 @@ tile_data = PoolIntArray( -65536, 0, 65542, -65535, 0, 2, -65534, 0, 5 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GameLayer/MovingPlatforms/MovingPlatform2"]
 autoplay = "default"
 playback_process_mode = 0
-anims/default = SubResource( 3 )
+anims/default = SubResource( 2 )
 
 [node name="Doors" type="Node2D" parent="GameLayer"]
 z_index = -1
@@ -222,11 +219,6 @@ scale = Vector2( 0.6, 0.6 )
 position = Vector2( 1280, 704 )
 scale = Vector2( 0.6, 0.6 )
 
-[node name="LevelEnd" parent="GameLayer" instance=ExtResource( 4 )]
-position = Vector2( 1022, 832 )
-z_index = -1
-collision_layer = 2147483648
-
 [node name="Infos" type="Node2D" parent="GameLayer"]
 visible = false
 
@@ -241,19 +233,24 @@ margin_left = 354.0
 margin_top = 104.0
 margin_right = 532.0
 margin_bottom = 201.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Hejgó"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="LevelEnd" parent="GameLayer" instance=ExtResource( 4 )]
+position = Vector2( 1022, 832 )
+z_index = -1
+collision_layer = 2147483648
+
 [node name="Logic" type="Node" parent="."]
 
 [node name="OneSec" type="Timer" parent="Logic"]
 
 [node name="Path2D" type="Path2D" parent="Logic"]
-curve = SubResource( 5 )
+curve = SubResource( 4 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 10 )]
 
@@ -265,21 +262,11 @@ scale = Vector2( 0.3, 0.3 )
 speed = Vector2( -100, 50 )
 gravity = 6000.0
 
-[node name="Path2D" type="Path2D" parent="Dino"]
-position = Vector2( -2901.33, -2346.67 )
-scale = Vector2( 3.33333, 3.33333 )
-curve = SubResource( 1 )
-
 [node name="Dino2" parent="." instance=ExtResource( 16 )]
-position = Vector2( 960, 822.4 )
+position = Vector2( 320, 769.48 )
 scale = Vector2( 0.3, 0.3 )
 speed = Vector2( -100, 50 )
 gravity = 6000.0
-
-[node name="Path2D" type="Path2D" parent="Dino2"]
-position = Vector2( -2901.33, -2346.67 )
-scale = Vector2( 3.33333, 3.33333 )
-curve = SubResource( 1 )
 [connection signal="quiz_answered" from="InterfaceLayer/QuizUI" to="." method="_on_quiz_answered"]
 [connection signal="body_entered" from="GameLayer/LevelEnd" to="." method="_on_LevelEnd"]
 [connection signal="timeout" from="Logic/OneSec" to="." method="_on_OneSec_timeout"]

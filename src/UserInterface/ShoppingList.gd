@@ -1,6 +1,7 @@
 extends Control
 
 signal Done
+signal Egg
 
 var ShoppingListItem = load("res://src/Class/ShoppingListItem.gd")
 var List = Array()
@@ -22,7 +23,7 @@ func Get_List():
 func Clear_List():
 	shopping_list_label.text = ""
 	shopping_list_count_label.text = ""
-	wealth_label.text = ""
+	wealth_label.text = str(Wealth)
 	pass
 
 func Cross_Out_Item(cItem):
@@ -32,19 +33,19 @@ func Cross_Out_Item(cItem):
 	pass
 
 func Bought_Item(name, count):
-	print(name)
-	print(count)
 	for item in List:
 		if item.getValue() == name:
 			item.setCurrent(count)
-	
+	check()
 	Draw_List()
 	pass
 
 func check():
 	for item in List:
 		if !item.getChecked():
-			pass
+			return
+		if item.getValue() == "Egg":
+			emit_signal("Egg")
 	emit_signal("Done")
 	pass
 	
@@ -61,6 +62,7 @@ func Draw_List():
 	pass
 
 func SetWealth(wealth):
+	print(wealth)
 	Wealth = wealth
 	wealth_label.text = str(Wealth)
 	pass
@@ -73,3 +75,4 @@ func _ready():
 func _on_HBoxContainer_item_rect_changed():
 	$ShoppingListLabel.setSize()
 	pass # Replace with function body.
+

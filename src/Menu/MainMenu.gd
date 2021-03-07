@@ -6,6 +6,7 @@ onready var buttons = get_node("MarginContainer/VBoxContainer/MarginContainer/Bu
 onready var settings_button = get_node("MarginContainer/VBoxContainer/Title/CustomButton")
 
 func _ready():
+	randomize()
 	for button in buttons.get_children():
 		button.connect("pressed", self, "_on_Button_pressed", [button.scene_to_load])
 	settings_button.connect("pressed", self, "_on_Button_pressed", [settings_button.scene_to_load])
